@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Eye, EyeClosed, LucideAngularModule } from 'lucide-angular';
 import { LogoComponent } from '../../components/logo/logo.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'LoginPage',
@@ -14,6 +15,8 @@ import { LogoComponent } from '../../components/logo/logo.component';
 export class LoginComponent {
   readonly EyeOpen = Eye;
   readonly EyeClosed = EyeClosed;
+
+  constructor(private router: Router) {}
 
   isLogin = true;
   isCNPJ = false;
@@ -27,9 +30,10 @@ export class LoginComponent {
 
   login() {
     console.log('Login:', this.username, this.password);
+    this.router.navigate(['/dashboard']);
   }
 
-  registrar(){
+  registrar() {
     console.log('Registrar:', this.username, this.password);
   }
 

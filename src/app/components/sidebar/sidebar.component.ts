@@ -11,17 +11,24 @@ import {
   IdCard,
   Stethoscope,
   HandCoins,
+  AlignJustify,
+  X,
 } from 'lucide-angular';
 import { MenuSection } from '../../models/menu-sections/menu.sections';
-import { LogoComponent } from "../logo/logo.component";
+import { LogoComponent } from '../logo/logo.component';
 import { CommonModule } from '@angular/common';
-import { MenuButtonComponent } from "../menu-button/menu-button.component";
+import { MenuButtonComponent } from '../menu-button/menu-button.component';
 
 @Component({
   selector: 'sidebar',
-  imports: [LogoComponent, CommonModule, LucideAngularModule, MenuButtonComponent],
+  imports: [
+    LogoComponent,
+    CommonModule,
+    LucideAngularModule,
+    MenuButtonComponent,
+  ],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
   /*Definindo os icones a ser usado na tela. */
@@ -30,7 +37,8 @@ export class SidebarComponent {
   readonly NotbookText = NotebookText;
   readonly WalletCardsIcon = Banknote;
   readonly LogOut = LogOut;
-  readonly MenuIcon = MenuIcon;
+  readonly MenuIcon = AlignJustify;
+  readonly MenuIconClose = X;
   readonly Users = Users;
   readonly IdCard = IdCard;
   readonly Stethoscope = Stethoscope;
@@ -77,24 +85,13 @@ export class SidebarComponent {
     {
       title: 'Painel Principal',
       items: [
-        { text: 'Pagina principal', icon: LayoutDashboard, route: '/index' },
-        { text: 'Consultas', icon: NotebookText, route: '/agendamentos' },
-        { text: 'Financeiro', icon: Banknote, route: '/financeiro' },
-      ],
-    },
-    {
-      title: 'Cadastros',
-      items: [
-        { text: 'Pacientes', icon: Users, route: '/pacientes' },
-        { text: 'Medicos', icon: IdCard, route: '/medicos' },
-        { text: 'Serviços', icon: Stethoscope, route: '/servicos' },
         {
-          text: 'Pagamentos / Convenios',
-          icon: HandCoins,
-          route: '/pagamentos',
+          text: 'Pagina principal',
+          icon: LayoutDashboard,
+          route: 'home',
         },
       ],
     },
+    
   ];
-
 }

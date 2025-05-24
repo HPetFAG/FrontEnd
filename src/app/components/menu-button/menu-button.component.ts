@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LucideAngularModule, LayoutDashboard } from 'lucide-angular';
 
@@ -7,7 +7,7 @@ import { LucideAngularModule, LayoutDashboard } from 'lucide-angular';
   selector: 'MenuButton',
   imports: [CommonModule, LucideAngularModule, RouterModule],
   templateUrl: './menu-button.component.html',
-  styleUrl: './menu-button.component.css'
+  styleUrl: './menu-button.component.css',
 })
 export class MenuButtonComponent {
   readonly LayoutDashboard = LayoutDashboard;
@@ -15,8 +15,16 @@ export class MenuButtonComponent {
   @Input() buttonText: any = '';
   @Input() icon: any = LayoutDashboard;
   @Input() routerLink: string | any[] = [];
-  @Input() isCollapsed: boolean | undefined; 
+  @Input() isCollapsed: boolean | undefined;
 
+  /*Definindo se esta em um mobile */
+  isMobile = window.innerWidth < 640;
+
+  /*Irá atualizar o valor conforme o tamanho da tela */
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isMobile = window.innerWidth < 640;
+  }
 
   constructor() {}
 }
