@@ -47,7 +47,7 @@ export class SidebarComponent {
   /*Variaveis de estado */
   isSelected = false;
   isCollapsed = true;
-
+  
   /*Definindo se esta em um mobile */
   isMobile = window.innerWidth < 640;
 
