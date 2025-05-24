@@ -15,7 +15,7 @@ export class LoginComponent {
   readonly EyeOpen = Eye;
   readonly EyeClosed = EyeClosed;
 
-  isLogin = false;
+  isLogin = true;
   isCNPJ = false;
   isPasswordVisible: boolean = true;
   username: string = '';
