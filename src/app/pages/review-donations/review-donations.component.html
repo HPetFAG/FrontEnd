@@ -1,5 +1,5 @@
 <main class="flex flex-col h-full w-full p-10 gap-8">
-<!-- primeira seccao -->
+  <!-- primeira seccao -->
   <div class="flex flex-row flex-1 w-full">
     <div class="flex flex-row w-full gap-8">
       <!-- Card 1 -->
@@ -11,8 +11,8 @@
             Total Arrecadado
           </h1>
           <lucide-angular
-            [img]="paw"
-            class="text-yellow-500"
+            [img]="dollarsign"
+            class="text-green-500"
             [size]="26"
           ></lucide-angular>
         </div>
@@ -37,8 +37,8 @@
             Doacoes este mes
           </h1>
           <lucide-angular
-            [img]="heart"
-            class="text-red-500"
+            [img]="giftcard"
+            class="text-orange-500"
             [size]="26"
           ></lucide-angular>
         </div>
@@ -63,25 +63,27 @@
             Avaliaçao Medias
           </h1>
           <lucide-angular
-            [img]="heart"
-            class="text-red-500"
+            [img]="star"
+            class="text-yellow-500"
             [size]="26"
           ></lucide-angular>
         </div>
         <div class="flex mt-2 justify-start h-full">
-          <h1 class="text-6xl font-bold text-black/80">23</h1>
+          <h1 class="text-6xl font-bold text-black/80">4.8</h1>
         </div>
         <div class="flex items-center gap-1 mt-2">
-          <lucide-angular
-            [img]="trendinDown"
-            class="text-red-500"
-            [size]="26"
-          ></lucide-angular>
-          <span class="text-sm text-red-600 font-medium">-20% este mês</span>
+          <ng-container *ngFor="let starItem of [1, 2, 3, 4, 5]; let i = index">
+            <lucide-angular
+              [img]="star"
+              class="text-yellow-500"
+              [size]="22"
+            ></lucide-angular>
+          </ng-container>
+          <span class="text-sm font-medium">(127 reviews)</span>
         </div>
       </div>
       <!-- Card 4 -->
-            <div
+      <div
         class="flex h-full w-full flex-col rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
       >
         <div class="flex flex-row justify-between w-full">
@@ -89,8 +91,8 @@
             Reviews este mes
           </h1>
           <lucide-angular
-            [img]="heart"
-            class="text-red-500"
+            [img]="messagesquare"
+            class="text-blue-500"
             [size]="26"
           ></lucide-angular>
         </div>
@@ -109,5 +111,24 @@
     </div>
   </div>
   <!-- Card para analisar formularios de adoções -->
-  <div class="flex flex-3"></div>
+  <div class="flex flex-3">
+    <div class="w-70 rounded-lg h-10 flex shadow-[0_0_8px_rgba(0,0,0,0.20)]">
+      <div class="flex-1 flex flex-row items-center justify-center p-1">
+        <lucide-angular
+          [img]="giftcard"
+          class="text-orange-500"
+          [size]="18"
+        ></lucide-angular>
+        <h1 class="text-sm ml-1 font-semibold text-black/60">Doações</h1>
+      </div>
+      <div class="flex-1 flex flex-row items-center justify-center p-1 bg-gray-50">
+        <lucide-angular
+          [img]="star"
+          class="text-yellow-500"
+          [size]="18"
+        ></lucide-angular>
+        <h1 class="text-sm ml-1 font-semibold text-black/60">reviews</h1>
+      </div>
+    </div>
+  </div>
 </main>

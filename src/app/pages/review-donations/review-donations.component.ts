@@ -1,16 +1,31 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Heart, LucideAngularModule, PawPrint, TrendingDown, TrendingUp } from 'lucide-angular';
+import {
+  DollarSign,
+  Gift,
+  LucideAngularModule,
+  MessageSquare,
+  Star,
+  TrendingDown,
+  TrendingUp,
+} from 'lucide-angular';
 
 @Component({
   selector: 'app-review-donations',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, CommonModule],
   templateUrl: './review-donations.component.html',
-  styleUrl: './review-donations.component.css',
 })
 export class ReviewDonationsComponent {
-  readonly paw = PawPrint;
   readonly trendinup = TrendingUp;
   readonly trendinDown = TrendingDown;
-  readonly heart = Heart;
+  readonly dollarsign = DollarSign;
+  readonly giftcard = Gift;
+  readonly star = Star;
+  readonly messagesquare = MessageSquare;
 
+  activeTab: 'donations' | 'reviews' = 'donations';
+
+  setActive(tab: 'donations' | 'reviews') {
+    this.activeTab = tab;
+  }
 }
