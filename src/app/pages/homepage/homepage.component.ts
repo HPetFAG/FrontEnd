@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Heart, LucideAngularModule, PawPrint, TrendingDown, TrendingUp } from 'lucide-angular';
+import { Cake, CakeSlice, ChevronLeft, ChevronRight, Heart, LucideAngularModule, Map, Mars, PawPrint, Phone, TrendingDown, TrendingUp, User } from 'lucide-angular';
 
 @Component({
   selector: 'app-homepage',
@@ -10,6 +10,13 @@ import { Heart, LucideAngularModule, PawPrint, TrendingDown, TrendingUp } from '
 export class HomepageComponent {
   readonly paw = PawPrint
   readonly trendinup = TrendingUp
-    readonly trendinDown = TrendingDown
+  readonly trendinDown = TrendingDown
   readonly heart = Heart
+  readonly Cake = Cake
+  readonly mars = Mars
+  readonly map = Map
+  readonly user = User
+  readonly phone = Phone
+  readonly Chevronleft = ChevronLeft
+  readonly Chevronright = ChevronRight
 }

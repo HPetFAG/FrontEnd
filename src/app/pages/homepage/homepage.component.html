@@ -50,7 +50,7 @@
             class="text-red-500"
             [size]="26"
           ></lucide-angular>
-          <span class="text-sm text-red-600 font-medium">+20% este mês</span>
+          <span class="text-sm text-red-600 font-medium">-20% este mês</span>
         </div>
       </div>
       <!-- Card 3 -->
@@ -68,11 +68,11 @@
           <span class="text-base font-medium text-black/80">50%</span>
         </div>
 
-        <!-- Barra de progresso -->
+        <!-- Barra de progresso atualizar o valor no style.-->
         <div class="w-full h-2 rounded-full bg-neutral-100 mt-2">
           <div
             class="h-full bg-black rounded-full transition-all duration-500"
-            style="width: 77%"
+            style="width: 50%"
           ></div>
         </div>
 
@@ -101,30 +101,34 @@
             >Formularios para adoção</span
           >
         </div>
-        <div class="gap-2">
-          <Button>teste</Button>
-          <Button>teste</Button>
+        <!-- Botoes de navegacao -->
+        <div class="flex -mt-4 gap-4">
+          <Button
+            class="flex items-center border border-gray-200 rounded-lg p-1"
+          >
+            <lucide-angular
+              [img]="Chevronleft"
+              class="text-black/50"
+              [size]="24"
+            ></lucide-angular
+          ></Button>
+          <Button
+            class="flex items-center border border-gray-200 rounded-lg p-1"
+          >
+            <lucide-angular
+              [img]="Chevronright"
+              class="text-black/50"
+              [size]="24"
+            ></lucide-angular
+          ></Button>
         </div>
       </div>
 
-      <!-- Card da lista de animais
-      <div class="flex flex-col border border-gray-200  max-w-[380px] w-full h-full rounded-lg mt-4 p-2">
-        <div class="flex-1 bg-blue-500">
-          card com a imagem
-        </div>
-        <div class="flex-1 bg-black">
-          dados
-        </div>
-        <div class="flex-1 bg-amber">
-          ver formulario
-        </div>
-      </div> -->
-      <!-- Card do animal -->
       <div
         class="flex flex-col border border-gray-200 max-w-[380px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md"
       >
         <!-- Imagem do animal (imagem da web) -->
-        <div class="w-full h-54 bg-gray-200">
+        <div class="w-full h-58 bg-gray-200">
           <img
             src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Foto do animal"
@@ -133,19 +137,82 @@
         </div>
 
         <!-- Dados do animal -->
-        <div class="p-4 flex-1 bg-white">
-          <h2 class="text-xl font-semibold text-gray-800">Rex</h2>
-          <p class="text-gray-600 text-sm">Raça: Golden Retriever</p>
-          <p class="text-gray-600 text-sm">Idade: 4 anos</p>
-          <p class="text-gray-600 text-sm">Sexo: Macho</p>
+        <div class="p-4 flex-1">
+          <!-- Nome -->
+          <div class="flex flex-row gap-2 items-center justify-between">
+            <div class="flex flex-row items-center gap-2">
+              <lucide-angular
+                [img]="paw"
+                class="text-blue-500"
+                [size]="20"
+              ></lucide-angular>
+              <h2 class="text-2xl font-bold text-black/80">Rex</h2>
+            </div>
+            <div class="flex items-center mt-2">
+              <span
+                class="inline-block h-2 w-2 rounded-full bg-yellow-400 mr-1"
+              ></span>
+              <span class="text-sm font-medium text-yellow-400">Andamento</span>
+            </div>
+          </div>
+          <!-- Genero -->
+          <div class="flex flex-row gap-2 items-center mt-3">
+            <lucide-angular
+              [img]="mars"
+              class="text-blue-500"
+              [size]="20"
+            ></lucide-angular>
+            <span class="text-sm font-semibold text-black/60">Masculino</span>
+          </div>
+          <!-- Idade -->
+          <div class="flex flex-row gap-2 items-center mt-3">
+            <lucide-angular
+              [img]="Cake"
+              class="text-blue-500"
+              [size]="20"
+            ></lucide-angular>
+            <span class="text-sm font-semibold text-black/60">0.5 ano(s)</span>
+          </div>
+          <!-- Cidade -->
+          <div class="flex flex-row gap-2 items-center mt-3">
+            <lucide-angular
+              [img]="map"
+              class="text-blue-500"
+              [size]="20"
+            ></lucide-angular>
+            <span class="text-sm font-semibold text-black/60"
+              >Brasilia / DF</span
+            >
+          </div>
+          <!-- Nome do adotante -->
+          <div class="flex flex-row gap-2 items-center mt-3">
+            <lucide-angular
+              [img]="user"
+              class="text-blue-500"
+              [size]="20"
+            ></lucide-angular>
+            <span class="text-sm font-semibold text-black/60"
+              >Murillo Weis Kist</span
+            >
+          </div>
+          <!-- Contato do adotante -->
+          <div class="flex flex-row gap-2 items-center mt-3">
+            <lucide-angular
+              [img]="phone"
+              class="text-blue-500"
+              [size]="20"
+            ></lucide-angular>
+            <span class="text-sm font-semibold text-black/60"
+              >(44) 91234-5678</span
+            >
+          </div>
         </div>
-
         <!-- Botão para ver mais -->
-        <div class="p-4 bg-gray-100 text-center">
+        <div class="p-3 bg-gray-50 text-center">
           <button
             class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
           >
-            Ver mais detalhes
+            Ver Formulários de Adoção
           </button>
         </div>
       </div>
