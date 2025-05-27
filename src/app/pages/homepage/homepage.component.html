@@ -57,7 +57,7 @@
       <div
         class="flex flex-col h-full w-full rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-6"
       >
-        <h1 class="text-[18px] font-semibold text-black/80">Meta de Adoções</h1>
+        <h1 class="text-[18px] font-semibold text-black/60">Meta de Adoções</h1>
         <span class="text-sm text-black/50 mb-4">Progresso mensal</span>
 
         <!-- Valores -->
@@ -65,7 +65,7 @@
           <span class="text-base font-medium text-black/80"
             >23 de 30 adoções</span
           >
-          <span class="text-base font-medium text-black/80">77%</span>
+          <span class="text-base font-medium text-black/80">50%</span>
         </div>
 
         <!-- Barra de progresso -->
@@ -85,11 +85,70 @@
       </div>
     </div>
   </div>
+  <!-- Card para analisar formularios de adoções -->
   <div class="flex flex-3">
     <div
-      class="flex h-full w-full rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)]"
+      class="flex h-full flex-col w-full rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
     >
-      painel de analise de formularios
+      <div class="flex flex-row w-full justify-between">
+        <div class="flex flex-row gap-2">
+          <lucide-angular
+            [img]="heart"
+            class="text-red-500"
+            [size]="24"
+          ></lucide-angular>
+          <span class="text-base text-black/60 font-semibold"
+            >Formularios para adoção</span
+          >
+        </div>
+        <div class="gap-2">
+          <Button>teste</Button>
+          <Button>teste</Button>
+        </div>
+      </div>
+
+      <!-- Card da lista de animais
+      <div class="flex flex-col border border-gray-200  max-w-[380px] w-full h-full rounded-lg mt-4 p-2">
+        <div class="flex-1 bg-blue-500">
+          card com a imagem
+        </div>
+        <div class="flex-1 bg-black">
+          dados
+        </div>
+        <div class="flex-1 bg-amber">
+          ver formulario
+        </div>
+      </div> -->
+      <!-- Card do animal -->
+      <div
+        class="flex flex-col border border-gray-200 max-w-[380px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md"
+      >
+        <!-- Imagem do animal (imagem da web) -->
+        <div class="w-full h-54 bg-gray-200">
+          <img
+            src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Foto do animal"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Dados do animal -->
+        <div class="p-4 flex-1 bg-white">
+          <h2 class="text-xl font-semibold text-gray-800">Rex</h2>
+          <p class="text-gray-600 text-sm">Raça: Golden Retriever</p>
+          <p class="text-gray-600 text-sm">Idade: 4 anos</p>
+          <p class="text-gray-600 text-sm">Sexo: Macho</p>
+        </div>
+
+        <!-- Botão para ver mais -->
+        <div class="p-4 bg-gray-100 text-center">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+          >
+            Ver mais detalhes
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </main>
