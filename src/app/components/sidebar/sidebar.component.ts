@@ -47,7 +47,7 @@ export class SidebarComponent {
   /*Variaveis de estado */
   isSelected = false;
   isCollapsed = true;
-  
+
   /*Definindo se esta em um mobile */
   isMobile = window.innerWidth < 640;
 
@@ -80,7 +80,6 @@ export class SidebarComponent {
   /**
    * Seçoes de side bar
    */
-
   sections: MenuSection[] = [
     {
       title: 'Painel Principal',
@@ -90,8 +89,12 @@ export class SidebarComponent {
           icon: LayoutDashboard,
           route: 'home',
         },
+        {
+          text: 'Reviews / Doações',
+          icon: LayoutDashboard,
+          route: 'reviews-donations',
+        },
       ],
     },
-    
   ];
 }
