@@ -1,0 +1,40 @@
+<div
+  class="w-90 h-42 shadow-[0_0_8px_rgba(0,0,0,0.20)] rounded-lg p-4 flex flex-col"
+>
+  <div class="flex-1">
+    <div class="flex flex-row gap-2 items-center justify-between">
+      <div class="flex flex-row items-center gap-2 mt-2">
+        <h2 class="text-base font-bold text-black/70">Murillo Weisk Kist</h2>
+      </div>
+      <div class="flex items-center mt-2" *ngIf="status === 'pending'">
+        <span
+          class="inline-block h-2 w-2 rounded-full bg-yellow-400 mr-1"
+        ></span>
+        <span class="text-sm font-medium text-yellow-400">Andamento</span>
+      </div>
+      <div class="flex items-center mt-2" *ngIf="status === 'completed'">
+        <span
+          class="inline-block h-2 w-2 rounded-full bg-green-400 mr-1"
+        ></span>
+        <span class="text-sm font-medium text-green-400">Aprovado</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex-2">
+    <span class="text-sm font-semibold text-black/50">Valor da doação</span>
+    <h1 class="text-4xl font-bold">127.00</h1>
+    <div class="flex flex-row justify-between">
+      <span class="text-xs text-black/50 mt-4">12/05/2025</span>
+      <button
+        class="flex flex-row items-center justify-center gap-2 shadow-[0_0_8px_rgba(0,0,0,0.20)] hover:shadow-[0_0_8px_rgba(0,0,0,0.10)] rounded-lg p-2 text-sm"
+      >
+        <lucide-angular
+          [img]="messagesquare"
+          class="text-black/50"
+          [size]="18"
+        ></lucide-angular>
+        <span>Agradecer</span>
+      </button>
+    </div>
+  </div>
+</div>
