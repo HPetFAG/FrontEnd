@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Cake, CakeSlice, ChevronLeft, ChevronRight, Heart, LucideAngularModule, Map, Mars, PawPrint, Phone, TrendingDown, TrendingUp, User } from 'lucide-angular';
+import { BasicCardComponent } from "../../components/basic-card/basic-card.component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, BasicCardComponent],
   templateUrl: './homepage.component.html',
 
 })

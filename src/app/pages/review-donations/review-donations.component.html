@@ -3,57 +3,26 @@
   <div class="flex flex-row flex-1 w-full">
     <div class="flex flex-row w-full gap-8">
       <!-- Card 1 -->
-      <div
-        class="flex h-full w-full flex-col rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
-      >
-        <div class="flex flex-row justify-between w-full">
-          <h1 class="text-[18px] font-semibold text-black/60">
-            Total Arrecadado
-          </h1>
-          <lucide-angular
-            [img]="dollarsign"
-            class="text-green-500"
-            [size]="26"
-          ></lucide-angular>
-        </div>
-        <div class="flex mt-2 justify-start h-full">
-          <h1 class="text-6xl font-bold text-black/80">127</h1>
-        </div>
-        <div class="flex items-center gap-1 mt-2">
-          <lucide-angular
-            [img]="trendinup"
-            class="text-green-500"
-            [size]="26"
-          ></lucide-angular>
-          <span class="text-sm text-green-600 font-medium">+12% este mês</span>
-        </div>
-      </div>
+
+      <BasicCard
+        class="w-full"
+        title="Total de Doações"
+        [icon]="dollarsign"
+        iconColor="text-green-500"
+        [status]="'positive'"
+        [value]="127"
+        [percent]="12"
+      ></BasicCard>
       <!-- Card 2 -->
-      <div
-        class="flex h-full w-full flex-col rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
-      >
-        <div class="flex flex-row justify-between w-full">
-          <h1 class="text-[18px] font-semibold text-black/60">
-            Doacoes este mes
-          </h1>
-          <lucide-angular
-            [img]="giftcard"
-            class="text-orange-500"
-            [size]="26"
-          ></lucide-angular>
-        </div>
-        <div class="flex mt-2 justify-start h-full">
-          <h1 class="text-6xl font-bold text-black/80">23</h1>
-        </div>
-        <div class="flex items-center gap-1 mt-2">
-          <lucide-angular
-            [img]="trendinDown"
-            class="text-red-500"
-            [size]="26"
-          ></lucide-angular>
-          <span class="text-sm text-red-600 font-medium">-20% este mês</span>
-        </div>
-      </div>
+      <BasicCard
+        class="w-full"
+        title="Doacoes este mes"
+        [icon]="giftcard"
+        iconColor="text-orange-500"
+        [status]="'positive'"
+        [value]="23"
+        [percent]="12"
+      ></BasicCard>
       <!-- Card 2 -->
       <div
         class="flex h-full w-full flex-col rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
@@ -83,31 +52,16 @@
         </div>
       </div>
       <!-- Card 4 -->
-      <div
-        class="flex h-full w-full flex-col rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
-      >
-        <div class="flex flex-row justify-between w-full">
-          <h1 class="text-[18px] font-semibold text-black/60">
-            Reviews este mes
-          </h1>
-          <lucide-angular
-            [img]="messagesquare"
-            class="text-blue-500"
-            [size]="26"
-          ></lucide-angular>
-        </div>
-        <div class="flex mt-2 justify-start h-full">
-          <h1 class="text-6xl font-bold text-black/80">23</h1>
-        </div>
-        <div class="flex items-center gap-1 mt-2">
-          <lucide-angular
-            [img]="trendinDown"
-            class="text-red-500"
-            [size]="26"
-          ></lucide-angular>
-          <span class="text-sm text-red-600 font-medium">-20% este mês</span>
-        </div>
-      </div>
+
+            <BasicCard
+        class="w-full"
+        title="Reviews este mes"
+        [icon]="messagesquare"
+        iconColor="text-blue-500"
+        [status]="'positive'"
+        [value]="23"
+        [percent]="12"
+      ></BasicCard>
     </div>
   </div>
 
@@ -141,7 +95,7 @@
         </h1>
       </button>
       <button
-        class="flex-1 flex flex-row rounded-lg  items-center justify-center p-1"
+        class="flex-1 flex flex-row rounded-lg items-center justify-center p-1"
         (click)="setActive('reviews')"
         [ngClass]="{
           'bg-white': activeTab === 'reviews',

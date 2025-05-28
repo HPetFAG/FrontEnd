@@ -9,11 +9,12 @@ import {
   TrendingDown,
   TrendingUp,
 } from 'lucide-angular';
-import { DonationCardComponent } from "../../component/donation-card/donation-card.component";
+import { DonationCardComponent } from "../../components/donation-card/donation-card.component";
+import { BasicCardComponent } from "../../components/basic-card/basic-card.component";
 
 @Component({
   selector: 'app-review-donations',
-  imports: [LucideAngularModule, CommonModule, DonationCardComponent],
+  imports: [LucideAngularModule, CommonModule, DonationCardComponent, BasicCardComponent],
   templateUrl: './review-donations.component.html',
 })
 export class ReviewDonationsComponent {
