@@ -13,6 +13,7 @@ import {
   HandCoins,
   AlignJustify,
   X,
+  Bone,
 } from 'lucide-angular';
 import { MenuSection } from '../../models/menu-sections/menu.sections';
 import { LogoComponent } from '../logo/logo.component';
@@ -43,6 +44,7 @@ export class SidebarComponent {
   readonly IdCard = IdCard;
   readonly Stethoscope = Stethoscope;
   readonly HandCoins = HandCoins;
+  readonly bone = Bone;
 
   /*Variaveis de estado */
   isSelected = false;
@@ -93,8 +95,18 @@ export class SidebarComponent {
           text: 'Reviews / Doações',
           icon: LayoutDashboard,
           route: 'reviews-donations',
-        },
-      ],
+        }
+      ]
     },
+    {
+      title: 'Cadastro',
+      items: [
+        {
+          text: 'Cadastro de animais',
+          icon: Bone,
+          route: 'animal',
+        },
+      ]
+    }
   ];
 }
