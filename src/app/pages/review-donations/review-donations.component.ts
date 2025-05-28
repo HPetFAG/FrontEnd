@@ -27,5 +27,6 @@ export class ReviewDonationsComponent {
 
   setActive(tab: 'donations' | 'reviews') {
     this.activeTab = tab;
+    console.log(`Active tab set to: ${this.activeTab}`);
   }
 }
