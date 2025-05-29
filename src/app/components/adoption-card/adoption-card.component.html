@@ -1,10 +1,10 @@
 <div
-  class="flex flex-col border border-gray-200 max-w-[380px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md"
+  class="flex flex-col border border-gray-200 max-w-[420px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md"
 >
   <!-- Imagem do animal (imagem da web) -->
   <div class="w-full h-58 bg-gray-200">
     <img
-      [src]="photoUrl"	
+      [src]="photoUrl"
       alt="Foto do animal"
       class="w-full h-full object-cover"
     />
@@ -82,11 +82,14 @@
     </div>
   </div>
   <!-- Botão para ver mais -->
-  <div class="p-3 bg-gray-50 text-center">
+  <div class="p-2 flex justify-between items-center bg-gray-50 text-center">
+    <div>
+      <span class="text-xs text-black/50 mt-4">12/05/2025</span>
+    </div>
     <button
       class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
     >
-      Ver Formulários de Adoção
+      Formulario
     </button>
   </div>
 </div>
