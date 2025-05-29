@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { ChevronLeft, ChevronRight, LucideAngularModule } from 'lucide-angular';
+import { Bone, ChevronLeft, ChevronRight, Dog, LoaderIcon, LucideAngularModule, MapPinCheck } from 'lucide-angular';
+import { BasicCardComponent } from "../../components/basic-card/basic-card.component";
 
 @Component({
   selector: 'app-animal',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, BasicCardComponent],
   templateUrl: './animal.component.html'
 })
 export class AnimalComponent {
   readonly Chevronleft = ChevronLeft
   readonly Chevronright = ChevronRight
+  readonly bone = Bone
+  readonly dog = Dog
+  readonly loanding = LoaderIcon
+  readonly mappin = MapPinCheck
 }
