@@ -121,9 +121,20 @@
       </button>
     </div>
     <!-- Tabela de doacoes -->
-    <div class="mt-4 grid grid-rows-3 gap-2">
-      <CardDonation status="pending"></CardDonation>
-      <CardDonation status="completed"></CardDonation>
+    <div class="mt-4">
+      <div *ngIf="activeTab === 'donations'" class="grid grid-cols-4 gap-4">
+        <CardDonation status="pending"></CardDonation>
+        <CardDonation status="completed"></CardDonation>
+        <CardDonation status="pending"></CardDonation>
+        <CardDonation status="completed"></CardDonation>
+        <CardDonation status="pending"></CardDonation>
+        <CardDonation status="completed"></CardDonation>
+        <CardDonation status="pending"></CardDonation>
+        <CardDonation status="completed"></CardDonation>
+      </div>
+      <div *ngIf="activeTab === 'reviews'" class="grid grid-cols-4 gap-4">
+        
+      </div>
     </div>
   </div>
 </main>
