@@ -15,6 +15,6 @@ export class BasicCardComponent {
   @Input() status: 'positive' | 'negative' = 'positive';
   @Input() value: number = 0;
   @Input() percent: number = 0;
-  @Input() icon: any = PawPrint;
+  @Input() icon?: any;
   @Input() iconColor: string = 'text-primary-500';
 }
