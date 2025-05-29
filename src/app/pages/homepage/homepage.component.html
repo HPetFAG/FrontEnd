@@ -91,98 +91,48 @@
           ></Button>
         </div>
       </div>
-
-      <div
-        class="flex flex-col border border-gray-200 max-w-[380px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md"
-      >
-        <!-- Imagem do animal (imagem da web) -->
-        <div class="w-full h-58 bg-gray-200">
-          <img
-            src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Foto do animal"
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Dados do animal -->
-        <div class="p-4 flex-1">
-          <!-- Nome -->
-          <div class="flex flex-row gap-2 items-center justify-between">
-            <div class="flex flex-row items-center gap-2">
-              <lucide-angular
-                [img]="paw"
-                class="text-blue-500"
-                [size]="20"
-              ></lucide-angular>
-              <h2 class="text-2xl font-bold text-black/80">Rex</h2>
-            </div>
-            <div class="flex items-center mt-2">
-              <span
-                class="inline-block h-2 w-2 rounded-full bg-yellow-400 mr-1"
-              ></span>
-              <span class="text-sm font-medium text-yellow-400">Andamento</span>
-            </div>
-          </div>
-          <!-- Genero -->
-          <div class="flex flex-row gap-2 items-center mt-3">
-            <lucide-angular
-              [img]="mars"
-              class="text-blue-500"
-              [size]="20"
-            ></lucide-angular>
-            <span class="text-sm font-semibold text-black/60">Masculino</span>
-          </div>
-          <!-- Idade -->
-          <div class="flex flex-row gap-2 items-center mt-3">
-            <lucide-angular
-              [img]="Cake"
-              class="text-blue-500"
-              [size]="20"
-            ></lucide-angular>
-            <span class="text-sm font-semibold text-black/60">0.5 ano(s)</span>
-          </div>
-          <!-- Cidade -->
-          <div class="flex flex-row gap-2 items-center mt-3">
-            <lucide-angular
-              [img]="map"
-              class="text-blue-500"
-              [size]="20"
-            ></lucide-angular>
-            <span class="text-sm font-semibold text-black/60"
-              >Brasilia / DF</span
-            >
-          </div>
-          <!-- Nome do adotante -->
-          <div class="flex flex-row gap-2 items-center mt-3">
-            <lucide-angular
-              [img]="user"
-              class="text-blue-500"
-              [size]="20"
-            ></lucide-angular>
-            <span class="text-sm font-semibold text-black/60"
-              >Murillo Weis Kist</span
-            >
-          </div>
-          <!-- Contato do adotante -->
-          <div class="flex flex-row gap-2 items-center mt-3">
-            <lucide-angular
-              [img]="phone"
-              class="text-blue-500"
-              [size]="20"
-            ></lucide-angular>
-            <span class="text-sm font-semibold text-black/60"
-              >(44) 91234-5678</span
-            >
-          </div>
-        </div>
-        <!-- Botão para ver mais -->
-        <div class="p-3 bg-gray-50 text-center">
-          <button
-            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-          >
-            Ver Formulários de Adoção
-          </button>
-        </div>
+      <!-- Cards de adoção -->
+      <div class="grid grid-cols-4 gap-4">
+        <AdoptionCard
+          adopter="Murillo Weis Kist"
+          [age]="5"
+          gender="Macho"
+          location="Toledo"
+          phone="(44) 912345-6789"
+          [status]="'pending'"
+          name="Rex"
+          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ></AdoptionCard>
+        <AdoptionCard
+          adopter="Murillo Weis Kist"
+          [age]="5"
+          gender="Macho"
+          location="Toledo"
+          phone="(44) 912345-6789"
+          [status]="'completed'"
+          name="Rex"
+          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ></AdoptionCard>
+        <AdoptionCard
+          adopter="Murillo Weis Kist"
+          [age]="5"
+          gender="Macho"
+          location="Toledo"
+          phone="(44) 912345-6789"
+          [status]="'pending'"
+          name="Rex"
+          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ></AdoptionCard>
+        <AdoptionCard
+          adopter="Murillo Weis Kist"
+          [age]="5"
+          gender="Macho"
+          location="Toledo"
+          phone="(44) 912345-6789"
+          [status]="'completed'"
+          name="Rex"
+          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ></AdoptionCard>
       </div>
     </div>
   </div>
