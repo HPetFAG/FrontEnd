@@ -1,17 +1,29 @@
-import { Component } from '@angular/core';
-import { Bone, ChevronLeft, ChevronRight, Dog, LoaderIcon, LucideAngularModule, MapPinCheck } from 'lucide-angular';
-import { BasicCardComponent } from "../../components/basic-card/basic-card.component";
+import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Bone,
+  ChevronLeft,
+  ChevronRight,
+  Dog,
+  LoaderIcon,
+  LucideAngularModule,
+  MapPinCheck,
+  Search,
+} from 'lucide-angular';
+import { BasicCardComponent } from '../../components/basic-card/basic-card.component';
 
 @Component({
   selector: 'app-animal',
   imports: [LucideAngularModule, BasicCardComponent],
-  templateUrl: './animal.component.html'
+  templateUrl: './animal.component.html',
 })
 export class AnimalComponent {
-  readonly Chevronleft = ChevronLeft
-  readonly Chevronright = ChevronRight
-  readonly bone = Bone
-  readonly dog = Dog
-  readonly loanding = LoaderIcon
-  readonly mappin = MapPinCheck
+  readonly Chevronleft = ChevronLeft;
+  readonly Chevronright = ChevronRight;
+  readonly bone = Bone;
+  readonly dog = Dog;
+  readonly loanding = LoaderIcon;
+  readonly mappin = MapPinCheck;
+  readonly search = Search
+
+
 }
