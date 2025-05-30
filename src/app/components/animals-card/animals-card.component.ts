@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Cake, Heart, LucideAngularModule, Map, Mars, PawPrint, Phone, TrendingDown, TrendingUp, User } from 'lucide-angular';
+import { Cake, Heart, LucideAngularModule, Map, Mars, PawPrint, Phone, Shield, Syringe, TrendingDown, TrendingUp, User } from 'lucide-angular';
 
 @Component({
   selector: 'AnimalsCard',
@@ -18,6 +18,8 @@ export class AnimalsCardComponent {
   readonly map = Map;
   readonly user = User;
   readonly phoneIcon = Phone;
+  readonly syringe = Syringe
+  readonly shield = Shield
 
   @Input() status: 'pending' | 'completed' = 'pending';
   @Input() name: string = '';

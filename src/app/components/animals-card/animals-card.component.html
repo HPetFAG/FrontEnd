@@ -1,95 +1,86 @@
 <div
-  class="flex flex-col border border-gray-200 max-w-[350px]   max-h-[452px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md"
+  class="w-full max-h-64 h-full shadow-[0_0_8px_rgba(0,0,0,0.20)] rounded-lg flex mt-4 p-2 "
 >
-  <!-- Imagem do animal (imagem da web) -->
-  <div class="w-full h-58 bg-gray-200">
-    <img
-      [src]="photoUrl"
-      alt="Foto do animal"
-      class="w-full h-full object-cover"
-    />
+  <div class="flex-1 flex flex-col items-center justify-center">
+    <!-- Imagem do animal (imagem da web) -->
+    <div class="w-46 h-46 bg-gray-200 rounded-full">
+      <img
+        [src]="photoUrl"
+        alt="Foto do animal"
+        class="w-full h-full object-cover rounded-full"
+      />
+    </div>
+    <!-- Nome do Animal -->
   </div>
-
-  <!-- Dados do animal -->
-  <div class="p-4 flex-1">
-    <!-- Nome -->
-    <div class="flex flex-row gap-2 items-center justify-between">
-      <div class="flex flex-row items-center gap-2">
+  <div class="flex flex-col flex-1/6">
+    <div class="flex-1">
+      <div class="flex flex-row gap-2 items-center justify-between">
+        <div class="flex flex-row items-center gap-2">
+          <lucide-angular
+            [img]="paw"
+            class="text-blue-500"
+            [size]="20"
+          ></lucide-angular>
+          <h2 class="text-2xl font-bold text-black/80">{{ name }}</h2>
+        </div>
+        <div class="flex items-center mt-2">
+          <span
+            class="inline-block h-2 w-2 rounded-full bg-green-400 mr-1"
+          ></span>
+          <span class="text-sm font-medium text-green-400">Disponivel</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex-4">
+      <!-- Especie -->
+      <div class="flex flex-row gap-2 items-center mt-3">
         <lucide-angular
-          [img]="paw"
+          [img]="mars"
           class="text-blue-500"
           [size]="20"
         ></lucide-angular>
-        <h2 class="text-2xl font-bold text-black/80">{{ name }}</h2>
+        <span class="text-sm font-semibold text-black/60">Cachorro</span>
       </div>
-      <div class="flex items-center mt-2" *ngIf="status === 'pending'">
-        <span
-          class="inline-block h-2 w-2 rounded-full bg-yellow-400 mr-1"
-        ></span>
-        <span class="text-sm font-medium text-yellow-400">Adotado</span>
+      <!-- sexo -->
+      <div class="flex flex-row gap-2 items-center mt-2">
+        <lucide-angular
+          [img]="mars"
+          class="text-blue-500"
+          [size]="20"
+        ></lucide-angular>
+        <span class="text-sm font-semibold text-black/60">{{ gender }}</span>
       </div>
-      <div class="flex items-center mt-2" *ngIf="status === 'completed'">
-        <span
-          class="inline-block h-2 w-2 rounded-full bg-green-400 mr-1"
-        ></span>
-        <span class="text-sm font-medium text-green-400">Disponível</span>
+      <!-- idade -->
+      <div class="flex flex-row gap-2 items-center mt-2">
+        <lucide-angular
+          [img]="Cake"
+          class="text-blue-500"
+          [size]="20"
+        ></lucide-angular>
+        <span class="text-sm font-semibold text-black/60">0.5 ano(s)</span>
+      </div>
+      <!-- data de cadastro -->
+      <div class="flex flex-row gap-2 items-center mt-2">
+        <lucide-angular
+          [img]="mars"
+          class="text-blue-500"
+          [size]="20"
+        ></lucide-angular>
+        <span class="text-sm font-semibold text-black/60">30/05/2025</span>
+      </div>
+      <!-- Dados complementares -->
+      <div class="flex flex-row gap-2 items-center mt-2">
+        <lucide-angular
+          [img]="syringe"
+          class="text-blue-500"
+          [size]="22"
+        ></lucide-angular>
+        <lucide-angular
+          [img]="shield"
+          class="text-yellow-500"
+          [size]="22"
+        ></lucide-angular>
       </div>
     </div>
-    <!-- Genero -->
-    <div class="flex flex-row gap-2 items-center mt-3">
-      <lucide-angular
-        [img]="mars"
-        class="text-blue-500"
-        [size]="20"
-      ></lucide-angular>
-      <span class="text-sm font-semibold text-black/60">{{ gender }}</span>
-    </div>
-    <!-- Idade -->
-    <div class="flex flex-row gap-2 items-center mt-3">
-      <lucide-angular
-        [img]="Cake"
-        class="text-blue-500"
-        [size]="20"
-      ></lucide-angular>
-      <span class="text-sm font-semibold text-black/60">{{ age }} ano(s)</span>
-    </div>
-    <!-- Cidade -->
-    <div class="flex flex-row gap-2 items-center mt-3">
-      <lucide-angular
-        [img]="map"
-        class="text-blue-500"
-        [size]="20"
-      ></lucide-angular>
-      <span class="text-sm font-semibold text-black/60">{{ location }}</span>
-    </div>
-    <!-- Nome do adotante -->
-    <div class="flex flex-row gap-2 items-center mt-3">
-      <lucide-angular
-        [img]="user"
-        class="text-blue-500"
-        [size]="20"
-      ></lucide-angular>
-      <span class="text-sm font-semibold text-black/60">{{ adopter }}</span>
-    </div>
-    <!-- Contato do adotante -->
-    <div class="flex flex-row gap-2 items-center mt-3">
-      <lucide-angular
-        [img]="phoneIcon"
-        class="text-blue-500"
-        [size]="20"
-      ></lucide-angular>
-      <span class="text-sm font-semibold text-black/60">{{ phone }}</span>
-    </div>
-  </div>
-  <!-- Botão para ver mais -->
-  <div class="p-2 flex justify-between items-center bg-gray-50 text-center">
-    <div>
-      <span class="text-xs text-black/50 mt-4">12/05/2025</span>
-    </div>
-    <button
-      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-    >
-      Formulario
-    </button>
   </div>
 </div>

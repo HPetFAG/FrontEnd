@@ -25,6 +25,4 @@ export class AnimalComponent {
   readonly loanding = LoaderIcon;
   readonly mappin = MapPinCheck;
   readonly search = Search
-
-
 }
