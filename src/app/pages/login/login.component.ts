@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../service/users/user.service';
 import { User } from '../../models/user.model';
 import { NgxMaskDirective } from 'ngx-mask';
+import { AuthService } from '../../service/auth/auth.service';
 
 @Component({
   selector: 'LoginPage',
@@ -17,7 +18,6 @@ import { NgxMaskDirective } from 'ngx-mask';
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-  
   ],
   standalone: true,
   templateUrl: './login.component.html',
@@ -37,11 +37,32 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private authService: AuthService
+  ) {}
 
-  Authenticate() {
-    console.log(this.User.document, this.User.password)
+  Authenticate(): void {
+    var credenciais = {
+      document: this.User.document,
+      password: this.User.password,
+    };
 
+    console.log(credenciais);
+    this.authService.login(credenciais).subscribe({
+      next: (res) => {
+        console.log('Retorno', res);
+        if (res.token) {
+          console.log('Token recebido:', res.token);
+        } else {
+          console.warn('Nenhum token recebido');
+        }
+      },
+      error: (err) => {
+        console.error('Error', err);
+      },
+    });
   }
 
   CreateNewUser(): void {
