@@ -39,8 +39,9 @@ export class LoginComponent {
 
   constructor(private router: Router, private userService: UserService) {}
 
-  login() {
-    this.router.navigate(['/dashboard']);
+  Authenticate() {
+    console.log(this.User.document, this.User.password)
+
   }
 
   CreateNewUser(): void {
