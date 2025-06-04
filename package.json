@@ -19,6 +19,7 @@
     "@angular/router": "^19.2.0",
     "@tailwindcss/postcss": "^4.1.7",
     "lucide-angular": "^0.511.0",
+    "ngx-mask": "^19.0.7",
     "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.7",
