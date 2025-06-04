@@ -52,9 +52,9 @@ export class LoginComponent {
     console.log(credenciais);
     this.authService.login(credenciais).subscribe({
       next: (res) => {
-        console.log('Retorno', res);
-        if (res.token) {
-          console.log('Token recebido:', res.token);
+        console.log(res)
+        if (res.access_token) {
+          console.log('Token recebido:', res.access_token);
         } else {
           console.warn('Nenhum token recebido');
         }
