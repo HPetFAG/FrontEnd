@@ -39,7 +39,7 @@
           class="text-blue-500"
           [size]="20"
         ></lucide-angular>
-        <span class="text-sm font-semibold text-black/60">Cachorro</span>
+        <span class="text-sm font-semibold text-black/60">{{ species }}</span>
       </div>
       <!-- sexo -->
       <div class="flex flex-row gap-2 items-center mt-2">
@@ -57,7 +57,7 @@
           class="text-blue-500"
           [size]="20"
         ></lucide-angular>
-        <span class="text-sm font-semibold text-black/60">0.5 ano(s)</span>
+        <span class="text-sm font-semibold text-black/60">{{ age }}</span>
       </div>
       <!-- data de cadastro -->
       <div class="flex flex-row gap-2 items-center mt-2">
@@ -66,24 +66,34 @@
           class="text-blue-500"
           [size]="20"
         ></lucide-angular>
-        <span class="text-sm font-semibold text-black/60">30/05/2025</span>
+        <span class="text-sm font-semibold text-black/60">{{ size }}</span>
       </div>
       <!-- Dados complementares -->
       <div class="flex flex-row gap-2 justify-between items-center mt-2">
         <div class="flex flex-row gap-2">
           <lucide-angular
+            *ngIf="vaccinated === true"
             [img]="syringe"
             class="text-blue-500"
             [size]="22"
           ></lucide-angular>
           <lucide-angular
+            *ngIf="castrated === true"
             [img]="shield"
             class="text-yellow-500"
             [size]="22"
           ></lucide-angular>
+          <lucide-angular
+            *ngIf="castrated === true"
+            [img]="microchip"
+            class="text-green-500"
+            [size]="22"
+          ></lucide-angular>
         </div>
         <div class="  ">
-          <button class="hover:bg-gray-100 py-1 px-1 rounded-full items-center justify-center flex">
+          <button
+            class="hover:bg-gray-100 py-1 px-1 rounded-full items-center justify-center flex"
+          >
             <lucide-angular
               [img]="More"
               class="text-black/70"

@@ -1,12 +1,28 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Cake, Heart, LucideAngularModule, Map, Mars, MoreHorizontal, MoreVertical, PawPrint, Phone, Shield, Syringe, TrendingDown, TrendingUp, User } from 'lucide-angular';
+import {
+  Cake,
+  Heart,
+  LucideAngularModule,
+  Map,
+  Mars,
+  Microchip,
+  MoreHorizontal,
+  MoreVertical,
+  PawPrint,
+  Phone,
+  Shield,
+  Syringe,
+  TrendingDown,
+  TrendingUp,
+  User,
+} from 'lucide-angular';
 
 @Component({
   selector: 'AnimalsCard',
   imports: [CommonModule, LucideAngularModule],
+  standalone: true,
   templateUrl: './animals-card.component.html',
-
 })
 export class AnimalsCardComponent {
   readonly paw = PawPrint;
@@ -18,16 +34,19 @@ export class AnimalsCardComponent {
   readonly map = Map;
   readonly user = User;
   readonly phoneIcon = Phone;
-  readonly syringe = Syringe
-  readonly shield = Shield
-  readonly More = MoreVertical
+  readonly syringe = Syringe;
+  readonly shield = Shield;
+  readonly More = MoreVertical;
+  readonly microchip = Microchip
 
   @Input() status: 'pending' | 'completed' = 'pending';
   @Input() name: string = '';
-  @Input() age: number = 0;
-  @Input() gender: string = '';
-  @Input() location: string = '';
-  @Input() adopter: string = '';
-  @Input() phone: string = '';
   @Input() photoUrl: string = '';
+  @Input() species: string = '';
+  @Input() gender: string = '';
+  @Input() age: string = '';
+  @Input() size: string = '';
+  @Input() microchipped: boolean = false;
+  @Input() vaccinated: boolean = false;
+  @Input() castrated: boolean = false;
 }
