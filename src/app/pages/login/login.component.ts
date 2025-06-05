@@ -46,17 +46,19 @@ export class LoginComponent {
   ) {}
 
   Authenticate(): void {
-    var credenciais = {
+    var credentials = {
       document: this.User.document,
       password: this.User.password,
     };
 
-    console.log(credenciais);
-    this.authService.login(credenciais).subscribe({
+    this.authService.login(credentials).subscribe({
       next: (res) => {
-        console.log(res);
         if (res.access_token) {
-          console.log('Token recebido:', res.access_token);
+          // 2. Redireciona
+          this.router.navigate(['/dashboard']);
+
+          // 3. (Opcional) Log
+          console.log('Login bem-sucedido');
         } else {
           console.warn('Nenhum token recebido');
         }
@@ -66,7 +68,6 @@ export class LoginComponent {
       },
     });
   }
-
 
   CreateNewUser(): void {
     this.userService.createUser(this.User).subscribe(
