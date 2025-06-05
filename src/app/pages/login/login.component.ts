@@ -8,6 +8,7 @@ import { UserService } from '../../service/users/user.service';
 import { User } from '../../models/user.model';
 import { NgxMaskDirective } from 'ngx-mask';
 import { AuthService } from '../../service/auth/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'LoginPage',
@@ -40,7 +41,8 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private userService: UserService,
-    private authService: AuthService
+    private authService: AuthService,
+    private http: HttpClient
   ) {}
 
   Authenticate(): void {
@@ -52,7 +54,7 @@ export class LoginComponent {
     console.log(credenciais);
     this.authService.login(credenciais).subscribe({
       next: (res) => {
-        console.log(res)
+        console.log(res);
         if (res.access_token) {
           console.log('Token recebido:', res.access_token);
         } else {
@@ -64,6 +66,7 @@ export class LoginComponent {
       },
     });
   }
+
 
   CreateNewUser(): void {
     this.userService.createUser(this.User).subscribe(
