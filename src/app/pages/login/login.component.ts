@@ -8,7 +8,6 @@ import { UserService } from '../../service/users/user.service';
 import { User } from '../../models/user.model';
 import { NgxMaskDirective } from 'ngx-mask';
 import { AuthService } from '../../service/auth/auth.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'LoginPage',

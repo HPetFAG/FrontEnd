@@ -33,7 +33,6 @@ export class AnimalComponent {
   ) {}
 
   Create() {
-    console.log('Acionado')
     this.router.navigate(['/dashboard/registrar']);
   }
 }
