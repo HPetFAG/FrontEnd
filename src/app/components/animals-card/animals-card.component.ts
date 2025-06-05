@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import {
   Cake,
+  Edit,
   Heart,
   LucideAngularModule,
   Map,
@@ -13,6 +14,7 @@ import {
   Phone,
   Shield,
   Syringe,
+  Trash2,
   TrendingDown,
   TrendingUp,
   User,
@@ -37,7 +39,9 @@ export class AnimalsCardComponent {
   readonly syringe = Syringe;
   readonly shield = Shield;
   readonly More = MoreVertical;
-  readonly microchip = Microchip
+  readonly microchip = Microchip;
+  readonly Edit = Edit;
+  readonly Trash2 = Trash2;
 
   @Input() status: string = '';
   @Input() name: string = '';
@@ -49,4 +53,10 @@ export class AnimalsCardComponent {
   @Input() microchipped: boolean = false;
   @Input() vaccinated: boolean = false;
   @Input() castrated: boolean = false;
+
+  showOptions = false;
+
+  toggleOptions() {
+    this.showOptions = !this.showOptions;
+  }
 }
