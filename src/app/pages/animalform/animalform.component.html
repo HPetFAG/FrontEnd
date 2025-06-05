@@ -277,11 +277,6 @@
             <label class="block text-black/60 text-md font-medium mb-2">
               Vacinado
             </label>
-            <div *ngIf="vaccinated.invalid && vaccinated.touched">
-              <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
-                - Campo Obrigatorio
-              </p>
-            </div>
           </div>
           <!-- Select de genero -->
           <select
@@ -303,11 +298,6 @@
             <label class="block text-black/60 text-md font-medium mb-2">
               Castrado
             </label>
-            <div *ngIf="castrated.invalid && castrated.touched">
-              <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
-                - Campo Obrigatorio
-              </p>
-            </div>
           </div>
           <!-- Select de Espécie -->
           <select
@@ -328,11 +318,6 @@
             <label class="block text-black/60 text-md font-medium mb-2">
               MicroChipado
             </label>
-            <div *ngIf="microchipped.invalid && microchipped.touched">
-              <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
-                - Campo Obrigatorio
-              </p>
-            </div>
           </div>
           <!-- Select de Espécie -->
           <select
@@ -342,6 +327,7 @@
             #microchipped="ngModel"
             required
           >
+          
             <option [ngValue]="false">Nao</option>
             <option [ngValue]="true">Sim</option>
             >
@@ -354,7 +340,7 @@
             Observacão geral
           </label>
           <span class="text-sm text-black/40">
-            {{ Animal.observation.length }}/300
+            {{ Animal.observation.length }}/200
           </span>
         </div>
 
@@ -363,7 +349,7 @@
           id="note"
           placeholder="Observacao de temperamento, convivencia com outros animais, estado de saude, etc..."
           [(ngModel)]="Animal.observation"
-          maxlength="300"
+          maxlength="200"
           name="note"
         ></textarea>
       </div>

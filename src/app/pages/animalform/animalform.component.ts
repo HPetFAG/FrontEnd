@@ -21,8 +21,8 @@ export class AnimalformComponent {
     species: '',
     color: '',
     size: '',
-    weight: 0, // em kg
-    height: 0, // em cm
+    weight: 0, 
+    height: 0, 
     physicalDescription: '',
     vaccinated: false,
     castrated: false,
