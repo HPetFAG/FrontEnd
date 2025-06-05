@@ -1,1 +1,330 @@
-<p>animalform works!</p>
+<div class="flex flex-col h-full w-full p-12">
+  <div class="flex-1 flex">
+    <!-- Upload de foto do animal desenvolvimento -->
+    <div class="flex-1 flex flex-col items-center justify-center">
+      <!-- Imagem do animal (imagem da web) -->
+      <div class="w-80 h-60 border-4 border-gray-200 rounded-lg">
+        <img
+          src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Foto do animal"
+          class="w-full h-full object-cover rounded-md"
+        />
+      </div>
+    </div>
+    <div class="flex-2 w-full p-2">
+      <!-- Campo Nome -->
+      <div class="mb-2">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            Nome
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <input
+          class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline"
+          type="text"
+          mask="Nome"
+          placeholder="Rex"
+          name="username"
+          required
+        />
+      </div>
+      <div class="flex flex-row gap-4">
+        <!-- Campo Idade -->
+        <div class="mb-2 flex-1">
+          <div class="flex flex-row">
+            <label class="block text-black/60 text-md font-medium mb-2">
+              Idade
+            </label>
+            <div *ngIf="">
+              <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+                - Campo Obrigatorio
+              </p>
+            </div>
+          </div>
+          <input
+            class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            mask="Nome"
+            placeholder="4 meses"
+            name="username"
+            required
+          />
+        </div>
+        <!-- Campo Nome -->
+        <div class="mb-2 flex-1">
+          <div class="flex flex-row">
+            <label class="block text-black/60 text-md font-medium mb-2">
+              Raça
+            </label>
+            <div *ngIf="">
+              <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+                - Campo Obrigatorio
+              </p>
+            </div>
+          </div>
+          <input
+            class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            mask="Nome"
+            placeholder="Lavrador"
+            name="username"
+            required
+          />
+        </div>
+      </div>
+      <div class="flex flex-row w-full gap-4">
+        <!-- Campo genero -->
+        <div class="mb-2 flex-1">
+          <div class="flex flex-row">
+            <label class="block text-black/60 text-md font-medium mb-2">
+              Genero
+            </label>
+            <div *ngIf="">
+              <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+                - Campo Obrigatorio
+              </p>
+            </div>
+          </div>
+          <!-- Select de genero -->
+          <select
+            class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
+          >
+            <option value="Cachorro">Masculino</option>
+            <option value="Gato">Feminino</option>
+            <option value="Gato">Nao sei Informar</option>
+            >
+          </select>
+        </div>
+
+        <!-- Campo especie -->
+        <div class="mb-2 flex-1">
+          <div class="flex flex-row">
+            <label class="block text-black/60 text-md font-medium mb-2">
+              Especie
+            </label>
+            <div *ngIf="">
+              <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+                - Campo Obrigatorio
+              </p>
+            </div>
+          </div>
+          <!-- Select de Espécie -->
+          <select
+            class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
+          >
+            <option value="Cachorro">Cachorro</option>
+            <option value="Gato">Gato</option>
+            >
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-1">
+    <div class="flex flex-row w-full gap-4">
+      <!-- Campo Nome -->
+      <div class="mb-2 flex-1">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            Cor
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <input
+          class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline"
+          type="text"
+          mask="Nome"
+          placeholder="Branco Rajado"
+          name="username"
+          required
+        />
+      </div>
+      <!-- Campo Porte -->
+      <div class="mb-2 flex-1">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            Porte
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <!-- Select de genero -->
+        <select
+          class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
+        >
+          <option value="Cachorro">Pequeno</option>
+          <option value="Gato">Medio</option>
+          <option value="Gato">Grande</option>
+          <option value="Gato">Gigante</option>
+          <option value="Gato">Nao sei Informar</option>
+          >
+        </select>
+      </div>
+    </div>
+    <div class="flex flex-row w-full gap-4">
+      <!-- Campo Nome -->
+      <div class="mb-2 flex-1">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            Peso
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <input
+          class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline"
+          type="text"
+          mask="Nome"
+          placeholder="15.5 (Kg)"
+          name="username"
+          required
+        />
+      </div>
+      <!-- Campo Porte -->
+      <div class="mb-2 flex-1">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            Altura
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <input
+          class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline"
+          type="text"
+          mask="Nome"
+          placeholder="45 (cm)"
+          name="username"
+          required
+        />
+      </div>
+    </div>
+    <div class="mb-2 flex-1">
+      <div class="flex justify-between items-center mb-2">
+        <label class="block text-black/60 text-md font-medium" for="note">
+          Descriçao
+        </label>
+        <span class="text-sm text-black/40"> 0/200 </span>
+      </div>
+
+      <textarea
+        class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full h-18 py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline resize-none"
+        id="note"
+        placeholder="Breve descricao das caracteristicas fisicas..."
+        maxlength="200"
+        name="note"
+      ></textarea>
+    </div>
+  </div>
+  <div class="flex-1">
+    <div class="flex flex-row w-full gap-4">
+      <!-- Campo genero -->
+      <div class="mb-2 flex-1">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            Vacinado
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <!-- Select de genero -->
+        <select
+          class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
+        >
+          <option value="Cachorro">Sim</option>
+          <option value="Gato">Nao</option>
+          <option value="Gato">Parcialmente</option>
+          >
+        </select>
+      </div>
+
+      <!-- Campo especie -->
+      <div class="mb-2 flex-1">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            Castrado
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <!-- Select de Espécie -->
+        <select
+          class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
+        >
+          <option value="Cachorro">Nao</option>
+          <option value="Gato">Sim</option>
+          >
+        </select>
+      </div>
+      <!-- Chipado -->
+      <div class="mb-2 flex-1">
+        <div class="flex flex-row">
+          <label class="block text-black/60 text-md font-medium mb-2">
+            MicroChipado
+          </label>
+          <div *ngIf="">
+            <p class="text-red-500 text-sm font-semibold pl-2 mt-1">
+              - Campo Obrigatorio
+            </p>
+          </div>
+        </div>
+        <!-- Select de Espécie -->
+        <select
+          class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
+        >
+          <option value="Cachorro">Nao</option>
+          <option value="Gato">Sim</option>
+          >
+        </select>
+      </div>
+    </div>
+    <div class="mb-2 flex-1">
+      <div class="flex justify-between items-center mb-2">
+        <label class="block text-black/60 text-md font-medium" for="note">
+          Observacão geral
+        </label>
+        <span class="text-sm text-black/40"> 0/300 </span>
+      </div>
+
+      <textarea
+        class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full h-18 py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline resize-none"
+        id="note"
+        placeholder="Observacao de temperamento, convivencia com outros animais, estado de saude, etc..."
+        maxlength="300"
+        name="note"
+      ></textarea>
+    </div>
+    <div class="">
+      <button
+        class="bg-blue-500/90 font-primary hover:bg-blue-700 text-white font-bold py-3 px-4 w-full rounded-[8px] focus:outline-none focus:shadow-outline"
+        type="button"
+      >
+        Cadastrar
+      </button>
+    </div>
+  </div>
+</div>

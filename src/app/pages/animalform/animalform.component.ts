@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-animalform',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './animalform.component.html',
 
 })
