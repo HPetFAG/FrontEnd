@@ -57,6 +57,8 @@ export class AnimalComponent {
 
   DeleteAnimal(id: number) {
     console.log('Deletando animal com id:', id);
-    // lógica para deletar aqui
+    this.animalService.deleteUser(id).subscribe(() => {
+      this.LoadAllAnimals();
+    });
   }
 }

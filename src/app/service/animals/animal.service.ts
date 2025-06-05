@@ -23,7 +23,7 @@ export class AnimalService {
     return this.http.put<any>(`${this.apiUrl}/${id}`, userData);
   }
 
-  deleteUser(id: string): Observable<any> {
+  deleteUser(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 }
