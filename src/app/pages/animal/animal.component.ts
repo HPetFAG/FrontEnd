@@ -18,7 +18,12 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-animal',
-  imports: [LucideAngularModule, BasicCardComponent, AnimalsCardComponent, CommonModule],
+  imports: [
+    LucideAngularModule,
+    BasicCardComponent,
+    AnimalsCardComponent,
+    CommonModule,
+  ],
   templateUrl: './animal.component.html',
 })
 export class AnimalComponent {
@@ -48,5 +53,10 @@ export class AnimalComponent {
       this.animals = res;
       console.log('Animal carregados:', this.animals);
     });
+  }
+
+  DeleteAnimal(id: number) {
+    console.log('Deletando animal com id:', id);
+    // lógica para deletar aqui
   }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   Cake,
   Edit,
@@ -53,6 +53,9 @@ export class AnimalsCardComponent {
   @Input() microchipped: boolean = false;
   @Input() vaccinated: boolean = false;
   @Input() castrated: boolean = false;
+  @Input() DeleteAnimal?: () => void;
+  @Input() id!: number;
+  @Output() deleteAnimal = new EventEmitter<number>();
 
   showOptions = false;
 
