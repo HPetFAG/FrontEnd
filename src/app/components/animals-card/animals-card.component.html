@@ -1,5 +1,5 @@
 <div
-  class="w-full max-h-64 h-full shadow-[0_0_8px_rgba(0,0,0,0.20)] rounded-lg flex mt-4 p-2 "
+  class="w-full max-h-64 h-full shadow-[0_0_8px_rgba(0,0,0,0.20)] rounded-lg flex mt-4 p-2"
 >
   <div class="flex-1 flex flex-col items-center justify-center">
     <!-- Imagem do animal (imagem da web) -->
@@ -23,7 +23,7 @@
           ></lucide-angular>
           <h2 class="text-2xl font-bold text-black/80">{{ name }}</h2>
         </div>
-        <div class="flex items-center mt-2">
+        <div class="flex items-center mt-2 pr-2">
           <span
             class="inline-block h-2 w-2 rounded-full bg-green-400 mr-1"
           ></span>
@@ -69,17 +69,28 @@
         <span class="text-sm font-semibold text-black/60">30/05/2025</span>
       </div>
       <!-- Dados complementares -->
-      <div class="flex flex-row gap-2 items-center mt-2">
-        <lucide-angular
-          [img]="syringe"
-          class="text-blue-500"
-          [size]="22"
-        ></lucide-angular>
-        <lucide-angular
-          [img]="shield"
-          class="text-yellow-500"
-          [size]="22"
-        ></lucide-angular>
+      <div class="flex flex-row gap-2 justify-between items-center mt-2">
+        <div class="flex flex-row gap-2">
+          <lucide-angular
+            [img]="syringe"
+            class="text-blue-500"
+            [size]="22"
+          ></lucide-angular>
+          <lucide-angular
+            [img]="shield"
+            class="text-yellow-500"
+            [size]="22"
+          ></lucide-angular>
+        </div>
+        <div class="  ">
+          <button class="hover:bg-gray-100 py-1 px-1 rounded-full items-center justify-center flex">
+            <lucide-angular
+              [img]="More"
+              class="text-black/70"
+              [size]="22"
+            ></lucide-angular>
+          </button>
+        </div>
       </div>
     </div>
   </div>
