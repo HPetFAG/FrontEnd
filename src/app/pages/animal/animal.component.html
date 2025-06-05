@@ -88,15 +88,16 @@
             <option value="available">Disponível</option>
             <option value="adopted">Adotado</option>
           </select>
-          <!-- Select de Porte -->
-          <select
-            class="w-28 h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
-          >
-            <option value="all">Todos</option>
-            <option value="small">Pequeno</option>
-            <option value="medium">Médio</option>
-            <option value="large">Grande</option>
-          </select>
+          <!-- Button -->
+          <div class="flex items-center">
+            <button
+              class="bg-blue-500/90 font-primary hover:bg-blue-700 text-white font-bold py-3 px-4 w-full rounded-[8px] focus:outline-none focus:shadow-outline"
+              type="button"
+              (click)="Create()"
+            >
+              Cadastrar
+            </button>
+          </div>
         </div>
       </div>
 
@@ -110,61 +111,6 @@
     <div class="h-full">
       <!-- Cards de Animais cadastrados -->
       <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <AnimalsCard
-          class="w-full"
-          adopter="Murillo Weis Kist"
-          [age]="5"
-          gender="Macho"
-          location="Toledo"
-          phone="(44) 912345-6789"
-          [status]="'pending'"
-          name="Rex"
-          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        ></AnimalsCard>
-        <AnimalsCard
-          class="w-full"
-          adopter="Murillo Weis Kist"
-          [age]="5"
-          gender="Macho"
-          location="Toledo"
-          phone="(44) 912345-6789"
-          [status]="'pending'"
-          name="Rex"
-          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        ></AnimalsCard>
-        <AnimalsCard
-          class="w-full"
-          adopter="Murillo Weis Kist"
-          [age]="5"
-          gender="Macho"
-          location="Toledo"
-          phone="(44) 912345-6789"
-          [status]="'pending'"
-          name="Rex"
-          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        ></AnimalsCard>
-        <AnimalsCard
-          class="w-full"
-          adopter="Murillo Weis Kist"
-          [age]="5"
-          gender="Macho"
-          location="Toledo"
-          phone="(44) 912345-6789"
-          [status]="'pending'"
-          name="Rex"
-          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        ></AnimalsCard>
-        <AnimalsCard
-          class="w-full"
-          adopter="Murillo Weis Kist"
-          [age]="5"
-          gender="Macho"
-          location="Toledo"
-          phone="(44) 912345-6789"
-          [status]="'pending'"
-          name="Rex"
-          photoUrl="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        ></AnimalsCard>
         <AnimalsCard
           class="w-full"
           adopter="Murillo Weis Kist"

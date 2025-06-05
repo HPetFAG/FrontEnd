@@ -5,6 +5,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ReviewDonationsComponent } from './pages/review-donations/review-donations.component';
 import { AnimalComponent } from './pages/animal/animal.component';
 import { authGuard } from './service/auth/guards/auth.guards';
+import { AnimalformComponent } from './pages/animalform/animalform.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -17,7 +18,8 @@ export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomepageComponent },
       { path: 'reviews-donations', component: ReviewDonationsComponent},
-      { path: 'animal', component: AnimalComponent}
+      { path: 'animal', component: AnimalComponent},
+      { path: 'registrar', component: AnimalformComponent}
     ],
   },
 ];

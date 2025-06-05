@@ -10,7 +10,8 @@ import {
   Search,
 } from 'lucide-angular';
 import { BasicCardComponent } from '../../components/basic-card/basic-card.component';
-import { AnimalsCardComponent } from "../../components/animals-card/animals-card.component";
+import { AnimalsCardComponent } from '../../components/animals-card/animals-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-animal',
@@ -24,5 +25,15 @@ export class AnimalComponent {
   readonly dog = Dog;
   readonly loanding = LoaderIcon;
   readonly mappin = MapPinCheck;
-  readonly search = Search
+  readonly search = Search;
+
+  constructor(
+    private router: Router,
+
+  ) {}
+
+  Create() {
+    console.log('Acionado')
+    this.router.navigate(['/dashboard/registrar']);
+  }
 }
