@@ -23,11 +23,32 @@
           ></lucide-angular>
           <h2 class="text-2xl font-bold text-black/80">{{ name }}</h2>
         </div>
-        <div class="flex items-center mt-2 pr-2">
+        <div
+          class="flex items-center mt-2 pr-2"
+          *ngIf="status === 'disponivel'"
+        >
           <span
             class="inline-block h-2 w-2 rounded-full bg-green-400 mr-1"
           ></span>
           <span class="text-sm font-medium text-green-400">Disponivel</span>
+        </div>
+        <div class="flex items-center mt-2 pr-2" *ngIf="status === 'adotado'">
+          <span
+            class="inline-block h-2 w-2 rounded-full bg-blue-400 mr-1"
+          ></span>
+          <span class="text-sm font-medium text-blue-400">Adotado</span>
+        </div>
+        <div class="flex items-center mt-2 pr-2" *ngIf="status === 'andamento'">
+          <span
+            class="inline-block h-2 w-2 rounded-full bg-yellow-400 mr-1"
+          ></span>
+          <span class="text-sm font-medium text-yellow-400">Processando</span>
+        </div>
+        <div class="flex items-center mt-2 pr-2" *ngIf="status === 'falecido'">
+          <span
+            class="inline-block h-2 w-2 rounded-full bg-red-400 mr-1"
+          ></span>
+          <span class="text-sm font-medium text-red-400">Falecido</span>
         </div>
       </div>
     </div>

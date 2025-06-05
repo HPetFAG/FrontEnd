@@ -39,7 +39,7 @@ export class AnimalsCardComponent {
   readonly More = MoreVertical;
   readonly microchip = Microchip
 
-  @Input() status: 'pending' | 'completed' = 'pending';
+  @Input() status: string = '';
   @Input() name: string = '';
   @Input() photoUrl: string = '';
   @Input() species: string = '';
