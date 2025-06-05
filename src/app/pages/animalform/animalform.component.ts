@@ -15,4 +15,8 @@ export class AnimalformComponent {
   Back() {
     this.router.navigate(['/dashboard/animal'])
   }
+
+  CreateAnimal():void {
+  
+  }
 }
