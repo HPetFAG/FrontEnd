@@ -19,6 +19,8 @@ import { MenuSection } from '../../models/menu-sections/menu.sections';
 import { LogoComponent } from '../logo/logo.component';
 import { CommonModule } from '@angular/common';
 import { MenuButtonComponent } from '../menu-button/menu-button.component';
+import { AuthService } from '../../service/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sidebar',
@@ -45,6 +47,8 @@ export class SidebarComponent {
   readonly Stethoscope = Stethoscope;
   readonly HandCoins = HandCoins;
   readonly bone = Bone;
+
+  constructor(private router: Router, private authService: AuthService) {}
 
   /*Variaveis de estado */
   isSelected = false;
@@ -95,8 +99,8 @@ export class SidebarComponent {
           text: 'Reviews / Doações',
           icon: LayoutDashboard,
           route: 'reviews-donations',
-        }
-      ]
+        },
+      ],
     },
     {
       title: 'Cadastro',
@@ -106,7 +110,12 @@ export class SidebarComponent {
           icon: Bone,
           route: 'animal',
         },
-      ]
-    }
+      ],
+    },
   ];
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
 }

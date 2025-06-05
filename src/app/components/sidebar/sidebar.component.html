@@ -87,9 +87,9 @@
           class="w-full"
           [buttonText]="isCollapsed ? '' : 'Sair'"
           [icon]="LogOut"
-          routerLink="/"
           [isCollapsed]="isCollapsed"
-          (click)="isMobile && toggleSidebar()"
+          (click)="logout()"
+          
         ></MenuButton>
       </footer>
     </nav>

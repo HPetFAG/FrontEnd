@@ -42,7 +42,6 @@ export class LoginComponent {
     private router: Router,
     private userService: UserService,
     private authService: AuthService,
-    private http: HttpClient
   ) {}
 
   Authenticate(): void {
@@ -54,10 +53,8 @@ export class LoginComponent {
     this.authService.login(credentials).subscribe({
       next: (res) => {
         if (res.access_token) {
-          // 2. Redireciona
           this.router.navigate(['/dashboard']);
 
-          // 3. (Opcional) Log
           console.log('Login bem-sucedido');
         } else {
           console.warn('Nenhum token recebido');
@@ -65,6 +62,12 @@ export class LoginComponent {
       },
       error: (err) => {
         console.error('Error', err);
+
+        if (err.status === 401 || err.status === 400) {
+          alert('Documento ou senha inválidos. Tente novamente.');
+        } else {
+          alert('Erro no servidor. Tente mais tarde.');
+        }
       },
     });
   }
@@ -79,6 +82,8 @@ export class LoginComponent {
       }
     );
   }
+
+
 
   toggleMode() {
     this.isLogin = !this.isLogin;

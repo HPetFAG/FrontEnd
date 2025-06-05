@@ -23,7 +23,11 @@ export class AuthService {
   }
 
   getToken():string | null {
-    return localStorage.getItem('token')
+    return localStorage.getItem('token');
+  }
+
+  logout() {
+    return localStorage.removeItem('token');
   }
 
 }
