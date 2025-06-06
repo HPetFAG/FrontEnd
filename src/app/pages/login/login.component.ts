@@ -9,6 +9,7 @@ import { User } from '../../models/user.model';
 import { NgxMaskDirective } from 'ngx-mask';
 import { AuthService } from '../../service/auth/auth.service';
 import Swal from 'sweetalert2';
+import { InputComponent } from "../../components/forms/input/input.component";
 
 @Component({
   selector: 'LoginPage',
@@ -19,7 +20,8 @@ import Swal from 'sweetalert2';
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-  ],
+    InputComponent
+],
   standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',

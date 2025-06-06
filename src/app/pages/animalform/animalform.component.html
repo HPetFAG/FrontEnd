@@ -153,27 +153,18 @@
           [(value)]="Animal.vaccinated"
           [required]="true"
         ></FormSelect>
-
-        <!-- Campo especie -->
-        <div class="mb-2 flex-1">
-          <div class="flex flex-row">
-            <label class="block text-black/60 text-md font-medium mb-2">
-              Castrado
-            </label>
-          </div>
-          <!-- Select de Espécie -->
-          <select
-            class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
-            [(ngModel)]="Animal.castrated"
-            name="castrated"
-            #castrated="ngModel"
-            required
-          >
-            <option [ngValue]="false">Nao</option>
-            <option [ngValue]="true">Sim</option>
-            >
-          </select>
-        </div>
+        <!-- Campo Castrado -->
+        <FormSelect
+          class="flex-1"
+          label="Castrado"
+          name="castrated"
+          [options]="[
+            { label: 'Não', value: false },
+            { label: 'Sim', value: true }
+          ]"
+          [(value)]="Animal.castrated"
+          [required]="true"
+        ></FormSelect>
         <!-- Chipado -->
         <FormSelect
           class="flex-1"
