@@ -13,13 +13,14 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate:[authGuard],
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomepageComponent },
-      { path: 'reviews-donations', component: ReviewDonationsComponent},
-      { path: 'animal', component: AnimalComponent},
-      { path: 'registrar', component: AnimalformComponent}
+      { path: 'reviews-donations', component: ReviewDonationsComponent },
+      { path: 'animal', component: AnimalComponent },
+      { path: 'registrar', component: AnimalformComponent },
+      { path: 'editar/:id', component: AnimalformComponent },
     ],
   },
 ];

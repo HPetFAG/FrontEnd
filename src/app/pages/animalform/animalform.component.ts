@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalService } from '../../service/animals/animal.service';
 import { Animal } from '../../models/animal.model';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { UnfoldVertical } from 'lucide-angular';
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './animalform.component.html',
 })
-export class AnimalformComponent {
+export class AnimalformComponent implements OnInit {
   Animal: Animal = {
     id: 0,
     name: '',
@@ -21,8 +21,8 @@ export class AnimalformComponent {
     species: '',
     color: '',
     size: '',
-    weight: 0, 
-    height: 0, 
+    weight: 0,
+    height: 0,
     physicalDescription: '',
     vaccinated: false,
     castrated: false,
@@ -32,7 +32,33 @@ export class AnimalformComponent {
     createAt: new Date(),
   };
 
-  constructor(private router: Router, private animalService: AnimalService) {}
+  isEditMode = false;
+
+  constructor(
+    private router: Router,
+    private animalService: AnimalService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    const idParam = this.route.snapshot.paramMap.get('id');
+    if (idParam) {
+      this.isEditMode = true;
+      const id = Number(idParam);
+      this.loadAnimal(id);
+    }
+  }
+
+  loadAnimal(id: number): void {
+    this.animalService.getAnimalByID(id).subscribe({
+      next: (animal) => {
+        this.Animal = animal;
+      },
+      error: (err) => {
+        console.error('Erro ao carregar animal', err);
+      },
+    });
+  }
 
   Back() {
     this.router.navigate(['/dashboard/animal']);

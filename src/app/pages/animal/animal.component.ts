@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     BasicCardComponent,
     AnimalsCardComponent,
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './animal.component.html',
 })
@@ -93,8 +93,8 @@ export class AnimalComponent {
     });
   }
 
-    EditAnimal(id: number) {
+  EditAnimal(id: number) {
     console.log('Editando animal com id:', id);
-
+      this.router.navigate(['/dashboard/editar', id]);
   }
 }
