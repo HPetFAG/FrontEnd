@@ -24,7 +24,7 @@
       </div>
       <!-- Primeiro card -->
       <div class="flex-2 w-full p-2">
-        <!-- Campo Nome -->
+        <!-- Campo Nome
         <div class="mb-2">
           <div class="flex flex-row">
             <label class="block text-black/60 text-md font-medium mb-2">
@@ -45,9 +45,18 @@
             #name="ngModel"
             required
           />
-        </div>
+        </div> -->
+        <FieldInput
+          class="flex-1"
+          label="Nome"
+          placeholder="Rex"
+          [(value)]="Animal.name"
+          fieldName="name"
+          [required]="true"
+        >
+        </FieldInput>
         <div class="flex flex-row gap-4">
-          <!-- Campo Idade -->
+          <!-- Campo Idade
           <div class="mb-2 flex-1">
             <div class="flex flex-row">
               <label class="block text-black/60 text-md font-medium mb-2">
@@ -68,9 +77,17 @@
               [(ngModel)]="Animal.age"
               #age="ngModel"
             />
-          </div>
+          </div> -->
+          <FieldInput
+            class="flex-1"
+            label="Idade"
+            placeholder="4 meses"
+            [(value)]="Animal.age"
+            fieldName="age"
+            [required]="true"
+          ></FieldInput>
           <!-- Campo raca -->
-          <div class="mb-2 flex-1">
+          <!-- <div class="mb-2 flex-1">
             <div class="flex flex-row">
               <label class="block text-black/60 text-md font-medium mb-2">
                 Raça
@@ -90,7 +107,15 @@
               [(ngModel)]="Animal.race"
               #race="ngModel"
             />
-          </div>
+          </div> -->
+          <FieldInput
+            class="flex-1"
+            label="Raça"
+            placeholder="Lavrador"
+            [(value)]="Animal.race"
+            fieldName="race"
+            [required]="true"
+          ></FieldInput>
         </div>
         <div class="flex flex-row w-full gap-4">
           <!-- Campo genero -->
@@ -151,7 +176,7 @@
     <div class="flex-1">
       <div class="flex flex-row w-full gap-4">
         <!-- Campo cor -->
-        <div class="mb-2 flex-1">
+        <!-- <div class="mb-2 flex-1">
           <div class="flex flex-row">
             <label class="block text-black/60 text-md font-medium mb-2">
               Cor
@@ -172,7 +197,16 @@
             [(ngModel)]="Animal.color"
             #color="ngModel"
           />
-        </div>
+        </div> -->
+        <FieldInput
+          class="flex-1"
+          label="Cor"
+          placeholder="Marrom..."
+          [(value)]="Animal.color"
+          fieldName="color"
+          [required]="true"
+        >
+        </FieldInput>
         <!-- Campo Porte -->
         <div class="mb-2 flex-1">
           <div class="flex flex-row">
@@ -204,7 +238,7 @@
       </div>
       <div class="flex flex-row w-full gap-4">
         <!-- Campo peso -->
-        <div class="mb-2 flex-1">
+        <!-- <div class="mb-2 flex-1">
           <div class="flex flex-row">
             <label class="block text-black/60 text-md font-medium mb-2">
               Peso
@@ -225,9 +259,18 @@
             [(ngModel)]="Animal.weight"
             #weight="ngModel"
           />
-        </div>
+        </div> -->
+        <FieldInput
+          class="flex-1"
+          label="Peso (kg)"
+          placeholder="15.5"
+          [(value)]="Animal.weight"
+          fieldName="weight"
+          [required]="true"
+        >
+        </FieldInput>
         <!-- Campo altura -->
-        <div class="mb-2 flex-1">
+        <!-- <div class="mb-2 flex-1">
           <div class="flex flex-row">
             <label class="block text-black/60 text-md font-medium mb-2">
               Altura
@@ -247,7 +290,15 @@
             #height="ngModel"
             required
           />
-        </div>
+        </div> -->
+        <FieldInput
+          class="flex-1"
+          label="Altura (cm)"
+          placeholder="45"
+          [(value)]="Animal.height"
+          fieldName="height"
+          [required]="true"
+        ></FieldInput>
       </div>
       <div class="mb-2 flex-1">
         <div class="flex justify-between items-center mb-2">
@@ -327,7 +378,6 @@
             #microchipped="ngModel"
             required
           >
-          
             <option [ngValue]="false">Nao</option>
             <option [ngValue]="true">Sim</option>
             >
