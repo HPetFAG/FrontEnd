@@ -83,6 +83,8 @@ export class AnimalComponent {
     this.animalService.getUsers().subscribe((res) => {
       this.animals = res;
       console.log('Animal carregados:', this.animals);
+    }, (error) => {
+      console.log("Erro ao carregar animais")
     });
   }
 

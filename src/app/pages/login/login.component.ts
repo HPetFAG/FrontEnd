@@ -8,6 +8,7 @@ import { UserService } from '../../service/users/user.service';
 import { User } from '../../models/user.model';
 import { NgxMaskDirective } from 'ngx-mask';
 import { AuthService } from '../../service/auth/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'LoginPage',
@@ -40,7 +41,7 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private userService: UserService,
-    private authService: AuthService,
+    private authService: AuthService
   ) {}
 
   Authenticate(): void {
@@ -63,9 +64,19 @@ export class LoginComponent {
         console.error('Error', err);
 
         if (err.status === 401 || err.status === 400) {
-          alert('Documento ou senha inválidos. Tente novamente.');
+          Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Documento ou senha invalidos.',
+            showConfirmButton: false,
+            timer: 1500,
+          });
         } else {
-          alert('Erro no servidor. Tente mais tarde.');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Estamos com erro no servidor!',
+          });
         }
       },
     });
@@ -81,8 +92,6 @@ export class LoginComponent {
       }
     );
   }
-
-
 
   toggleMode() {
     this.isLogin = !this.isLogin;
