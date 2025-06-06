@@ -129,6 +129,7 @@
                 <button
                   class="flex items-center px-4 py-2 text-sm text-black/60 hover:bg-gray-100 w-full text-left"
                   type="button"
+                  (click)="editAnimal.emit(id)"
                 >
                   <lucide-angular
                     [img]="Edit"

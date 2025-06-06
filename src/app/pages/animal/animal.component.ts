@@ -92,4 +92,9 @@ export class AnimalComponent {
       this.LoadAllAnimals();
     });
   }
+
+    EditAnimal(id: number) {
+    console.log('Editando animal com id:', id);
+
+  }
 }

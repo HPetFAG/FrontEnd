@@ -56,6 +56,7 @@ export class AnimalsCardComponent {
   @Input() DeleteAnimal?: () => void;
   @Input() id!: number;
   @Output() deleteAnimal = new EventEmitter<number>();
+  @Output() editAnimal = new EventEmitter<number>();
 
   showOptions = false;
 
