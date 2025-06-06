@@ -15,7 +15,7 @@ export class AnimalService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  getAnimalByID(id: number):Observable<any> {
+  getAnimalByID(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
@@ -29,5 +29,9 @@ export class AnimalService {
 
   deleteUser(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+
+  searchByName(term: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/search?name=${term}`);
   }
 }

@@ -56,11 +56,7 @@ export class AnimalComponent {
   ) {
     this.searchSubject
       .pipe(
-        switchMap((term) =>
-          this.http.get<any[]>(
-            `http://localhost:3000/Animal/search?name=${term}`
-          )
-        )
+        switchMap((term) => this.animalService.searchByName(term))
       )
       .subscribe((data) => {
         this.animals = data;
@@ -82,7 +78,7 @@ export class AnimalComponent {
   LoadAllAnimals(): void {
     this.animalService.getUsers().subscribe((res) => {
       this.animals = res;
-      console.log('Animal carregados:', this.animals);
+      // console.log('Animal carregados:', this.animals);
     }, (error) => {
       console.log("Erro ao carregar animais")
     });
@@ -96,7 +92,7 @@ export class AnimalComponent {
   }
 
   EditAnimal(id: number) {
-    console.log('Editando animal com id:', id);
+    // console.log('Editando animal com id:', id);
       this.router.navigate(['/dashboard/editar', id]);
   }
 }
