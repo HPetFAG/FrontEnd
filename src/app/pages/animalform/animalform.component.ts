@@ -5,13 +5,20 @@ import { AnimalService } from '../../service/animals/animal.service';
 import { Animal } from '../../models/animal.model';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UnfoldVertical } from 'lucide-angular';
-import { InputComponent } from "../../components/forms/input/input.component";
-import { TextareaComponent } from "../../components/forms/textarea/textarea.component";
-import { SelectComponent } from "../../components/forms/select/select.component";
+import { InputComponent } from '../../components/forms/input/input.component';
+import { TextareaComponent } from '../../components/forms/textarea/textarea.component';
+import { SelectComponent } from '../../components/forms/select/select.component';
 
 @Component({
   selector: 'app-animalform',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, InputComponent, TextareaComponent, SelectComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputComponent,
+    TextareaComponent,
+    SelectComponent,
+  ],
   templateUrl: './animalform.component.html',
 })
 export class AnimalformComponent implements OnInit {
@@ -86,16 +93,14 @@ export class AnimalformComponent implements OnInit {
       this.Animal.microchipped = false;
     }
 
-    console.log(this.Animal)
-
-    // this.animalService.createUser(this.Animal).subscribe(
-    //   () => {
-    //     console.log('animal cadastrado com sucesso');
-    //     this.router.navigate(['/dashboard/animal']);
-    //   },
-    //   (error) => {
-    //     console.error('Error ao Criar usuario: ', error);
-    //   }
-    // );
+    this.animalService.createUser(this.Animal).subscribe(
+      () => {
+        console.log('animal cadastrado com sucesso');
+        this.router.navigate(['/dashboard/animal']);
+      },
+      (error) => {
+        console.error('Error ao Criar usuario: ', error);
+      }
+    );
   }
 }
