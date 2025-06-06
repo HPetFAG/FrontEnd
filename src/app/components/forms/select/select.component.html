@@ -1,0 +1,20 @@
+<div class="mb-2 flex-1">
+  <div class="flex flex-row">
+    <label class="block text-black/60 text-md font-medium mb-2" [for]="name">
+      {{ label }}
+    </label>
+  </div>
+
+  <select
+    class="w-full h-11 rounded-lg shadow-[0_0_2px_rgba(0,0,0,0.25)] px-3 py-2 text-base focus:border-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400"
+    [name]="name"
+    [id]="name"
+    [(ngModel)]="value"
+    (ngModelChange)="valueChange.emit($event)"
+    [required]="required"
+  >
+    <option *ngFor="let option of options" [ngValue]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+</div>

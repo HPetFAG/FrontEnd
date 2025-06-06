@@ -6,10 +6,12 @@ import { Animal } from '../../models/animal.model';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UnfoldVertical } from 'lucide-angular';
 import { InputComponent } from "../../components/forms/input/input.component";
+import { TextareaComponent } from "../../components/forms/textarea/textarea.component";
+import { SelectComponent } from "../../components/forms/select/select.component";
 
 @Component({
   selector: 'app-animalform',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, InputComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, InputComponent, TextareaComponent, SelectComponent],
   templateUrl: './animalform.component.html',
 })
 export class AnimalformComponent implements OnInit {
