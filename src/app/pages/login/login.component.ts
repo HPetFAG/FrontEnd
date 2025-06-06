@@ -6,7 +6,6 @@ import { LogoComponent } from '../../components/logo/logo.component';
 import { Router } from '@angular/router';
 import { UserService } from '../../service/users/user.service';
 import { User } from '../../models/user.model';
-import { NgxMaskDirective } from 'ngx-mask';
 import { AuthService } from '../../service/auth/auth.service';
 import Swal from 'sweetalert2';
 import { InputComponent } from "../../components/forms/input/input.component";
@@ -19,7 +18,6 @@ import { InputComponent } from "../../components/forms/input/input.component";
     LogoComponent,
     FormsModule,
     ReactiveFormsModule,
-    NgxMaskDirective,
     InputComponent
 ],
   standalone: true,
