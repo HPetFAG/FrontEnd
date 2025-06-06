@@ -15,6 +15,9 @@ import { Router } from '@angular/router';
 import { AnimalService } from '../../service/animals/animal.service';
 import { Animal } from '../../models/animal.model';
 import { CommonModule } from '@angular/common';
+import { debounceTime, Subject, switchMap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-animal',
@@ -23,6 +26,7 @@ import { CommonModule } from '@angular/common';
     BasicCardComponent,
     AnimalsCardComponent,
     CommonModule,
+    FormsModule
   ],
   templateUrl: './animal.component.html',
 })
@@ -35,6 +39,9 @@ export class AnimalComponent {
   readonly mappin = MapPinCheck;
   readonly search = Search;
 
+  searchTerm = '';
+  searchSubject = new Subject<string>();
+
   ngOnInit(): void {
     console.log('ListagemComponent - ngOnInit');
     this.LoadAllAnimals();
@@ -42,7 +49,32 @@ export class AnimalComponent {
 
   animals: Animal[] = [];
 
-  constructor(private router: Router, private animalService: AnimalService) {}
+  constructor(
+    private router: Router,
+    private animalService: AnimalService,
+    private http: HttpClient
+  ) {
+    this.searchSubject
+      .pipe(
+        debounceTime(300),
+        switchMap((term) =>
+          this.http.get<any[]>(
+            `http://localhost:3000/Animal/search?name=${term}`
+          )
+        )
+      )
+      .subscribe((data) => {
+        this.animals = data;
+      });
+  }
+
+  searchAnimal(term: string): void {
+    if (!term.trim()) {
+      this.LoadAllAnimals();
+      return;
+    }
+    this.searchSubject.next(term);
+  }
 
   Create() {
     this.router.navigate(['/dashboard/registrar']);
