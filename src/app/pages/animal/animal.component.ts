@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 import { AnimalService } from '../../service/animals/animal.service';
 import { Animal } from '../../models/animal.model';
 import { CommonModule } from '@angular/common';
-import { debounceTime, Subject, switchMap } from 'rxjs';
+import { Subject, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -56,7 +56,6 @@ export class AnimalComponent {
   ) {
     this.searchSubject
       .pipe(
-        debounceTime(300),
         switchMap((term) =>
           this.http.get<any[]>(
             `http://localhost:3000/Animal/search?name=${term}`
