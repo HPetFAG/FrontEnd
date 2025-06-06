@@ -13,8 +13,12 @@
   <div class="flex mt-2 justify-start h-full">
     <h1 class="text-6xl font-bold text-black/80">{{ value }}</h1>
   </div>
+
+  <!-- grafico negativo -->
+  @switch (status) { 
+  @case ('positive') {
   <!-- grafico Positivo -->
-  <div class="flex items-center gap-1 mt-2" *ngIf="status === 'positive'">
+  <div class="flex items-center gap-1 mt-2">
     <lucide-angular
       [img]="trendinup"
       class="text-green-500"
@@ -24,10 +28,10 @@
       >+{{ percent }}% este mês</span
     >
   </div>
-  <!-- grafico negativo -->
-  <div class="flex items-center gap-1 mt-2" *ngIf="status === 'negative'">
+  } @case ('negative') {
+  <div class="flex items-center gap-1 mt-2">
     <lucide-angular
-      [img]="trendinup"
+      [img]="trendinDown"
       class="text-red-500"
       [size]="26"
     ></lucide-angular>
@@ -35,4 +39,5 @@
       >-{{ percent }}% este mês</span
     >
   </div>
+  } }
 </div>

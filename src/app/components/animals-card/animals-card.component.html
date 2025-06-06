@@ -92,24 +92,26 @@
       <!-- Dados complementares -->
       <div class="flex flex-row gap-2 justify-between items-center mt-2">
         <div class="flex flex-row gap-2">
+          @if (vaccinated === true) {
           <lucide-angular
-            *ngIf="vaccinated === true"
             [img]="syringe"
             class="text-blue-500"
             [size]="22"
           ></lucide-angular>
+          } @if (castrated === true) {
           <lucide-angular
-            *ngIf="castrated === true"
             [img]="shield"
             class="text-yellow-500"
             [size]="22"
           ></lucide-angular>
+          } @if (microchipped === true) {
           <lucide-angular
             *ngIf="microchipped === true"
             [img]="microchip"
             class="text-green-500"
             [size]="22"
           ></lucide-angular>
+          }
         </div>
         <div class="  ">
           <button

@@ -52,7 +52,6 @@ export class AnimalComponent {
   constructor(
     private router: Router,
     private animalService: AnimalService,
-    private http: HttpClient
   ) {
     this.searchSubject
       .pipe(
@@ -85,7 +84,7 @@ export class AnimalComponent {
   }
 
   DeleteAnimal(id: number) {
-    console.log('Deletando animal com id:', id);
+    // console.log('Deletando animal com id:', id);
     this.animalService.deleteUser(id).subscribe(() => {
       this.LoadAllAnimals();
     });
