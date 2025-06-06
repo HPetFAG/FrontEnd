@@ -95,11 +95,11 @@ export class AnimalformComponent implements OnInit {
 
     this.animalService.createUser(this.Animal).subscribe(
       () => {
-        console.log('animal cadastrado com sucesso');
+        // console.log('animal cadastrado com sucesso');
         this.router.navigate(['/dashboard/animal']);
       },
       (error) => {
-        console.error('Error ao Criar usuario: ', error);
+        console.error('Error ao Criar Animal: ', error);
       }
     );
   }

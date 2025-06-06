@@ -39,24 +39,22 @@ export class AnimalComponent {
   readonly mappin = MapPinCheck;
   readonly search = Search;
 
+  animals: Animal[] = [];
+
   searchTerm = '';
   searchSubject = new Subject<string>();
 
   ngOnInit(): void {
-    console.log('ListagemComponent - ngOnInit');
     this.LoadAllAnimals();
   }
 
-  animals: Animal[] = [];
+  constructor(private router: Router, private animalService: AnimalService) {
+    this.initializeSearch()
+  }
 
-  constructor(
-    private router: Router,
-    private animalService: AnimalService,
-  ) {
+  private initializeSearch(): void {
     this.searchSubject
-      .pipe(
-        switchMap((term) => this.animalService.searchByName(term))
-      )
+      .pipe(switchMap((term) => this.animalService.searchByName(term)))
       .subscribe((data) => {
         this.animals = data;
       });
@@ -75,12 +73,15 @@ export class AnimalComponent {
   }
 
   LoadAllAnimals(): void {
-    this.animalService.getUsers().subscribe((res) => {
-      this.animals = res;
-      // console.log('Animal carregados:', this.animals);
-    }, (error) => {
-      console.log("Erro ao carregar animais")
-    });
+    this.animalService.getUsers().subscribe(
+      (res) => {
+        this.animals = res;
+        // console.log('Animal carregados:', this.animals);
+      },
+      (error) => {
+        console.log('Erro ao carregar animais');
+      }
+    );
   }
 
   DeleteAnimal(id: number) {
@@ -92,6 +93,6 @@ export class AnimalComponent {
 
   EditAnimal(id: number) {
     // console.log('Editando animal com id:', id);
-      this.router.navigate(['/dashboard/editar', id]);
+    this.router.navigate(['/dashboard/editar', id]);
   }
 }
