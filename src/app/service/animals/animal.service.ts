@@ -36,7 +36,8 @@ export class AnimalService {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 
-  searchByName(term: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/search?name=${term}`);
+  searchByName(term: string, page: number = 1): Observable<PaginatedResponse<Animal>>  {
+    return this.http.get<PaginatedResponse<Animal>>(`${this.apiUrl}/search?name=${term}&page=${page}`);
+
   }
 }

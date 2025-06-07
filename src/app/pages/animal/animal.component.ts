@@ -44,6 +44,7 @@ export class AnimalComponent {
   searchTerm = '';
   searchSubject = new Subject<string>();
   page = 1;
+  isSearching = false;
 
   ngOnInit(): void {
     this.LoadAllAnimals(this.page);
@@ -53,16 +54,85 @@ export class AnimalComponent {
     this.initializeSearch();
   }
 
+  // private initializeSearch(): void {
+  //   this.searchSubject
+  //     .pipe(switchMap((term) => this.animalService.searchByName(term)))
+  //     .subscribe((data) => {
+  //       this.animals = data;
+  //     });
+  // }
+
+  // searchAnimal(term: string): void {
+  //   if (!term.trim()) {
+  //     this.LoadAllAnimals(this.page);
+  //     return;
+  //   }
+  //   this.searchSubject.next(term);
+  // }
+
+  // Create() {
+  //   this.router.navigate(['/dashboard/registrar']);
+  // }
+
+  // LoadAllAnimals(page: number): void {
+  //   this.animalService.getUsers(page).subscribe(
+  //     (res) => {
+  //       this.animals = res.items;
+  //       this.meta = res.meta;
+  //       console.log('Animais carregados:', this.animals);
+  //       console.log('Meta:', this.meta);
+  //     },
+  //     (error) => {
+  //       console.log('Erro ao carregar animais');
+  //     }
+  //   );
+  // }
+
+  // DeleteAnimal(id: number) {
+  //   // console.log('Deletando animal com id:', id);
+  //   this.animalService.deleteUser(id).subscribe(() => {
+  //     this.LoadAllAnimals(this.page);
+  //   });
+  // }
+
+  // EditAnimal(id: number) {
+  //   // console.log('Editando animal com id:', id);
+  //   this.router.navigate(['/dashboard/editar', id]);
+  // }
+
+  // // Incrementa página (ir para próxima página)
+  // NextPage(): void {
+  //   if (this.page < this.meta.totalPages) {
+  //     this.page++;
+  //     this.LoadAllAnimals(this.page);
+  //   }
+  // }
+
+  // // Decrementa página (ir para página anterior)
+  // PreviousPage(): void {
+  //   if (this.page > 1) {
+  //     this.page--;
+  //     this.LoadAllAnimals(this.page);
+  //   }
+  // }
   private initializeSearch(): void {
     this.searchSubject
-      .pipe(switchMap((term) => this.animalService.searchByName(term)))
-      .subscribe((data) => {
-        this.animals = data;
+      .pipe(
+        switchMap((term) => {
+          this.searchTerm = term;
+          this.page = 1;
+          return this.animalService.searchByName(term, this.page);
+        })
+      )
+      .subscribe((res) => {
+        this.animals = res.items;
+        this.meta = res.meta;
       });
   }
 
   searchAnimal(term: string): void {
     if (!term.trim()) {
+      this.searchTerm = '';
       this.LoadAllAnimals(this.page);
       return;
     }
@@ -88,30 +158,48 @@ export class AnimalComponent {
   }
 
   DeleteAnimal(id: number) {
-    // console.log('Deletando animal com id:', id);
     this.animalService.deleteUser(id).subscribe(() => {
-      this.LoadAllAnimals(this.page);
+      if (this.isSearching) {
+        this.searchAnimal(this.searchTerm);
+      } else {
+        this.LoadAllAnimals(this.page);
+      }
     });
   }
 
   EditAnimal(id: number) {
-    // console.log('Editando animal com id:', id);
     this.router.navigate(['/dashboard/editar', id]);
   }
 
-  // Incrementa página (ir para próxima página)
   NextPage(): void {
     if (this.page < this.meta.totalPages) {
       this.page++;
-      this.LoadAllAnimals(this.page);
+      if (this.searchTerm.trim()) {
+        this.animalService
+          .searchByName(this.searchTerm, this.page)
+          .subscribe((res) => {
+            this.animals = res.items;
+            this.meta = res.meta;
+          });
+      } else {
+        this.LoadAllAnimals(this.page);
+      }
     }
   }
 
-  // Decrementa página (ir para página anterior)
   PreviousPage(): void {
     if (this.page > 1) {
       this.page--;
-      this.LoadAllAnimals(this.page);
+      if (this.searchTerm.trim()) {
+        this.animalService
+          .searchByName(this.searchTerm, this.page)
+          .subscribe((res) => {
+            this.animals = res.items;
+            this.meta = res.meta;
+          });
+      } else {
+        this.LoadAllAnimals(this.page);
+      }
     }
   }
 }
