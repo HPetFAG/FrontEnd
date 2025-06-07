@@ -109,6 +109,7 @@
         <div class="flex  gap-4">
           <Button
             class="flex items-center border border-gray-200 rounded-lg p-1"
+            (click)="PreviousPage()"
           >
             <lucide-angular
               [img]="Chevronleft"
@@ -118,6 +119,7 @@
           ></Button>
           <Button
             class="flex items-center border border-gray-200 rounded-lg p-1"
+            (click)="NextPage()"
           >
             <lucide-angular
               [img]="Chevronright"

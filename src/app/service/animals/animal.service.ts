@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../config/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Animal } from '../../models/animal.model';
+import { PaginatedResponse } from '../../models/paginatedResponse.model';
+
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +14,10 @@ export class AnimalService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getUsers(page: number): Observable<PaginatedResponse<Animal>> {
+    return this.http.get<PaginatedResponse<Animal>>(
+      `${this.apiUrl}?page=${page}`
+    );
   }
 
   getAnimalByID(id: number): Observable<any> {
