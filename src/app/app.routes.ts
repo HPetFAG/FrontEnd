@@ -9,8 +9,11 @@ import { AnimalformComponent } from './pages/animalform/animalform.component';
 import { AprensentationComponent } from './pages/aprensentation/aprensentation.component';
 
 export const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'teste', component: AprensentationComponent },
+  // tela de inicio
+  { path: '', component: AprensentationComponent },
+
+  // tela de login
+   { path: 'login', component: LoginComponent },
 
   {
     path: 'dashboard',
