@@ -77,18 +77,101 @@
           [required]="true"
         ></FieldInput>
       </div>
-      <!-- Campo Nome -->
-      <FieldInput
-        class="flex-1"
-        label="Profissao"
-        placeholder="Murillo Weis Kist"
-        fieldName="name"
-        [required]="true"
-      ></FieldInput>
+      <div class="flex flex-row w-full gap-4">
+        <!-- Campo Nome -->
+        <FieldInput
+          class="flex-1"
+          label="Profissao"
+          placeholder="Murillo Weis Kist"
+          fieldName="name"
+          [required]="true"
+        ></FieldInput>
+        <!-- Campo Nome -->
+        <FieldInput
+          class="flex-1"
+          label="Endereco"
+          placeholder="Murillo Weis Kist"
+          fieldName="name"
+          [required]="true"
+        ></FieldInput>
+      </div>
     </div>
   </div>
   <!-- card 2 -->
-  <div class="flex-1 bg-cyan-300">a</div>
-  <!-- card 3 -->
-  <div class="flex-1 bg-cyan-400">a</div>
+  <div class="flex-2 flex flex-col border border-gray-200 rounded-lg p-4">
+    <div class="flex flex-row gap-4">
+      <!-- Campo genero -->
+      <FormSelect
+        class="flex-1"
+        label="Mora em:"
+        name="gender"
+        [options]="[
+          { label: 'Casa', value: 'Casa' },
+          { label: 'Apartamento', value: 'Apartamento' }
+        ]"
+        [required]="true"
+      ></FormSelect>
+      <!-- Campo genero -->
+      <FormSelect
+        class="flex-1"
+        label="Possui Quintal/Area:"
+        name="gender"
+        [options]="[
+          { label: 'Sim', value: 'Casa' },
+          { label: 'Nao', value: 'Apartamento' }
+        ]"
+        [required]="true"
+      ></FormSelect>
+    </div>
+    <div class="flex flex-row gap-4">
+      <!-- Campo genero -->
+      <FormSelect
+        class="flex-1"
+        label="Ja teve Outros Animais ?"
+        name="gender"
+        [options]="[
+          { label: 'Sim', value: 'Casa' },
+          { label: 'Nao', value: 'Apartamento' }
+        ]"
+        [required]="true"
+      ></FormSelect>
+      <!-- Campo genero -->
+      <FormSelect
+        class="flex-1"
+        label="Atualmente possui Outros animais"
+        name="gender"
+        [options]="[
+          { label: 'Sim', value: 'Casa' },
+          { label: 'Nao', value: 'Apartamento' }
+        ]"
+        [required]="true"
+      ></FormSelect>
+    </div>
+    <!-- Descricao Fisica -->
+    <FormArea
+      label="Ja teve experiencia com cuidado de outros animais ?"
+      placeholder=""
+      [maxlength]="200"
+    ></FormArea>
+    <!-- Descricao Fisica -->
+    <FormArea
+      label="Por que deseja adotar este animal ?"
+      placeholder="Desejo adotar este animalzinho por ......."
+      [maxlength]="200"
+    ></FormArea>
+    <div>
+      <p class="mt-2 text-base pl-1 text-gray-600">
+        Ao enviar este formulário, você concorda que as informações fornecidas
+        são verdadeiras e autoriza a verificação dos dados para o processo de
+        adoção.
+      </p>
+    </div>
+    <div class="flex justify-end mt-6">
+      <button
+        class="font-medium bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Enviar 
+      </button>
+    </div>
+  </div>
 </section>
