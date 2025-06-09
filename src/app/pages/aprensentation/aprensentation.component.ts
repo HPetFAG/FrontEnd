@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from "../../components/logo/logo.component";
 import { Calendar, Heart, LucideAngularModule, MapPinIcon, PawPrint, PinIcon, Search } from 'lucide-angular';
+import { PetCardComponent } from "../../components/landing/pet-card/pet-card.component";
 
 @Component({
   selector: 'app-aprensentation',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, PetCardComponent],
   templateUrl: './aprensentation.component.html',
   styleUrl: './aprensentation.component.css'
 })
