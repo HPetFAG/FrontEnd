@@ -6,9 +6,11 @@ import { ReviewDonationsComponent } from './pages/review-donations/review-donati
 import { AnimalComponent } from './pages/animal/animal.component';
 import { authGuard } from './service/auth/guards/auth.guards';
 import { AnimalformComponent } from './pages/animalform/animalform.component';
+import { AprensentationComponent } from './pages/aprensentation/aprensentation.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'teste', component: AprensentationComponent },
 
   {
     path: 'dashboard',

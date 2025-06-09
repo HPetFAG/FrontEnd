@@ -1,0 +1,218 @@
+<header class="border-b border-gray-200 backdrop-blur-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex flex-row items-center">
+        <!-- Ícone substituído por SVG ou componente -->
+        <lucide-angular
+          [img]="Paw"
+          class="text-blue-500 mr-1"
+          [size]="26"
+        ></lucide-angular>
+        <span class="text-2xl font-bold text-gray-800">Help</span>
+        <span class="text-2xl font-bold text-blue-500">Pet</span>
+      </div>
+
+      <nav class="hidden md:flex space-x-6">
+        <a
+          href="#sobre"
+          class="font-medium text-gray-600 hover:text-blue-500 transition-colors"
+          >Sobre</a
+        >
+        <a
+          href="#adocao"
+          class="font-medium text-gray-600 hover:text-blue-500 transition-colors"
+          >Adoção</a
+        >
+        <a
+          href="#status"
+          class="font-medium text-gray-600 hover:text-blue-500 transition-colors"
+          >Status</a
+        >
+        <a
+          href="#contato"
+          class="font-medium text-gray-600 hover:text-blue-500 transition-colors"
+          >Contato</a
+        >
+      </nav>
+
+      <button
+        class="font-medium bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Quero Adotar
+      </button>
+    </div>
+  </div>
+</header>
+
+<section id="sobre" class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Lado esquerdo: texto e botões -->
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <span
+            class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200"
+          >
+            Adoção Responsável
+          </span>
+          <h1
+            class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight"
+          >
+            Conectando corações
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            O HelpPet é uma plataforma dedicada a facilitar a adoção responsável
+            de animais de estimação. Conectamos pessoas que desejam adotar com
+            ONGs e protetores independentes, criando um ambiente seguro e
+            confiável para encontrar seu novo melhor amigo.
+          </p>
+        </div>
+
+        <!-- Blocos de ícones -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex items-start space-x-3">
+            <!-- Icone Coracao -->
+            <lucide-angular
+              [img]="heart"
+              class="text-blue-500 mr-1"
+              [size]="26"
+            ></lucide-angular>
+            <div>
+              <h3 class="font-semibold text-gray-800">Adoção Responsável</h3>
+              <p class="text-gray-600 text-sm">
+                Processo cuidadoso para garantir o bem-estar dos animais
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <!-- Search -->
+            <lucide-angular
+              [img]="search"
+              class="text-blue-500 mr-1"
+              [size]="26"
+            ></lucide-angular>
+            <div>
+              <h3 class="font-semibold text-gray-800">Busca Facilitada</h3>
+              <p class="text-gray-600 text-sm">
+                Encontre o pet ideal através de filtros personalizados
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <!-- pin -->
+            <lucide-angular
+              [img]="pin"
+              class="text-blue-500 mr-1"
+              [size]="26"
+            ></lucide-angular>
+            <div>
+              <h3 class="font-semibold text-gray-800">Adocao Regional</h3>
+              <p class="text-gray-600 text-sm">
+                Pets disponíveis em sua região
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <!-- Calendario -->
+            <lucide-angular
+              [img]="calendar"
+              class="text-blue-500 mr-1"
+              [size]="26"
+            ></lucide-angular>
+            <div>
+              <h3 class="font-semibold text-gray-800">Acompanhamento</h3>
+              <p class="text-gray-600 text-sm">
+                Suporte durante todo o processo de adoção
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button
+            class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg"
+          >
+            Começar Adoção
+          </button>
+        </div>
+      </div>
+
+      <!-- Lado direito: imagem -->
+      <div class="relative">
+        <img
+          src="/placeholder.svg"
+          alt="Pessoa feliz com seu pet adotado"
+          width="600"
+          height="500"
+          class="rounded-2xl shadow-2xl"
+        />
+        <div
+          class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg"
+        >
+          <div class="flex items-center space-x-3">
+            <div class="bg-red-100 p-2 rounded-full">
+              <!-- coracao -->
+              <lucide-angular
+                [img]="heart"
+                class="text-red-500"
+                [size]="26"
+              ></lucide-angular>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800">+1.200</p>
+              <p class="text-sm text-gray-600">Pets adotados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <header class="text-center mb-12">
+      <span
+        class="bg-blue-100 text-blue-700 px-3 py-1 rounded mb-4 inline-block"
+        >Adoção</span
+      >
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        Encontre seu novo melhor amigo
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Conheça alguns dos pets que estão esperando por uma família amorosa.
+      </p>
+    </header>
+
+    <div class="flex justify-center mb-8">
+      <div
+        class="flex items-center space-x-4 bg-white p-2 rounded-lg shadow-sm"
+      >
+        <input
+          type="text"
+
+          placeholder="Buscar por nome, tipo ou localização..."
+          class="w-80 border-0 focus:ring-0"
+        />
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-sm"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <!-- <app-pet-card *ngFor="let pet of filteredPets" [pet]="pet"></app-pet-card> -->
+    </div>
+
+    <div class="text-center">
+      <button
+        class="border border-blue-500 text-blue-500 hover:bg-blue-50 text-lg px-6 py-2 rounded-lg"
+      >
+        Ver Todos os Pets
+      </button>
+    </div>
+  </div>
+</section>
