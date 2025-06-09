@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
   selector: 'FormArea',
   imports: [CommonModule, FormsModule],
   templateUrl: './textarea.component.html',
-  styleUrl: './textarea.component.css',
 })
 export class TextareaComponent {
   @Input() label: string = '';

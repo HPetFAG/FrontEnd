@@ -11,7 +11,7 @@ interface SelectOption<T = any> {
   selector: 'FormSelect',
   imports: [CommonModule, FormsModule],
   templateUrl: './select.component.html',
-  styleUrl: './select.component.css',
+
 })
 export class SelectComponent<T = any> {
    @Input() label: string = '';
