@@ -7,7 +7,6 @@ import { PetCardComponent } from "../../components/landing/pet-card/pet-card.com
   selector: 'app-aprensentation',
   imports: [LucideAngularModule, PetCardComponent],
   templateUrl: './aprensentation.component.html',
-  styleUrl: './aprensentation.component.css'
 })
 export class AprensentationComponent {
   readonly Paw = PawPrint
