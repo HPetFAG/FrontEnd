@@ -7,6 +7,7 @@ import { AnimalComponent } from './pages/animal/animal.component';
 import { authGuard } from './service/auth/guards/auth.guards';
 import { AnimalformComponent } from './pages/animalform/animalform.component';
 import { AprensentationComponent } from './pages/aprensentation/aprensentation.component';
+import { AdoptionformComponent } from './pages/adoptionform/adoptionform.component';
 
 export const routes: Routes = [
   // tela de inicio
@@ -14,6 +15,7 @@ export const routes: Routes = [
 
   // tela de login
    { path: 'login', component: LoginComponent },
+   { path: 'formulario', component: AdoptionformComponent },
 
   {
     path: 'dashboard',
