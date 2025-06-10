@@ -62,22 +62,19 @@ O Angular CLI permite configurar diferentes frameworks de E2E conforme sua neces
 
 ## \:clipboard: Tarefas Pendentes
 
-* [ ] Integrar Nodemailer para envio de e-mails
-* [ ] Integrar pagina de formularios 
+* [ ] Integrar Nodemailer para envio de e-mails (Analise)
+* [ x ] Integrar pagina de formularios 
 * [ ] Adicionar design responsivo (mobile-first)
-* [ ] Implementar sistema de permissões e papéis (roles)
-* [ ] Separar as telas conforme os papéis de usuário
-* [ ] Enviar e-mail de confirmação de criacao de conta cadastro
-* [ ] landing page para exibição de animais para adoção
+* [ ] Enviar e-mail de confirmação de criacao de conta cadastro (Analise)
+* [ x ] landing page para exibição de animais para adoção
 * [ ] filtros no backend para busca de animais
-* [ ] Sistema de upload de fotos
+* [ ] Sistema de upload de fotos (Analise)
 * [ x ] paginações de dados 
-* [ ] tela na dashboard para todos os formularios
-* [ ] (Analisar) Duas opcoes de mostrar os animais e os cards (Lista e Cards)
+* [ x ] tela na dashboard para todos os formularios
 * [ ] Criar Sistema de reviews apos a adocao ser concluida
 * [ ] Sistema de doações fakes (Gerando dados aleatorios)
 * [ ] Sistema do back end para alimentar os cards
-* [ ] Notificacao por email do status da adocao
+* [ ] Notificacao por email do status da adocao (Analise)
 ---
 
 > Este projeto foi criado com fins educacionais, incentivando o trabalho em equipe e o uso de boas práticas no desenvolvimento front-end com Angular. Toda contribuição é bem-vinda!

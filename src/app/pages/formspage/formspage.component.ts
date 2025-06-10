@@ -71,4 +71,8 @@ export class FormspageComponent implements OnInit {
       },
     });
   }
+
+  viewForm(id: number): void {
+    console.log(id)
+  }
 }
