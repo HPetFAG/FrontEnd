@@ -97,46 +97,46 @@
             </thead>
             <tbody>
               <tr
-                *ngFor="let adocao of adocoes"
+                *ngFor="let form of forms"
                 class="border-b border-gray-200"
               >
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"
                 >
-                  {{ adocao.id }}
+                  {{ form.id }}
                 </td>
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"
                 >
-                  {{ adocao.animal }}
+                  {{ form.animal.name }}
                 </td>
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"
                 >
-                  {{ adocao.adotante }}
+                  {{ form.name }}
                 </td>
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"
                 >
-                  {{ adocao.contato }}
+                  {{ form.phone }}
                 </td>
                 <td
                   class="py-3 px-4 font-medium text-base leading-tigh text-center"
                 >
-                  {{ adocao.data }}
+                  {{ form.createdAt }}
                 </td>
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"
                 >
-                  <span [ngClass]="getStatusBadgeClass(adocao.status)">
-                    {{ adocao.status }}
+                  <span [ngClass]="getStatusBadgeClass(form.status)">
+                    {{ form.status }}
                   </span>
                 </td>
                 <td
                   class="py-3 px-4 text-center flex justify-center items-center"
                 >
                   <button
-                    (click)="toggleMenu(adocao.id)"
+                    (click)="toggleMenu(form.id)"
                     class="h-8 w-8 flex items-center justify-center hover:bg-gray-200 rounded"
                   >
                     <lucide-angular
@@ -146,7 +146,7 @@
                     ></lucide-angular>
                   </button>
                   <button
-                    (click)="toggleMenu(adocao.id)"
+                    (click)="toggleMenu(form.id)"
                     class="h-8 w-8 flex items-center justify-center hover:bg-gray-200 rounded"
                   >
                     <lucide-angular
