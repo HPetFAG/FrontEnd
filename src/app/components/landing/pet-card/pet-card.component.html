@@ -17,7 +17,7 @@
   </div>
   <div class="p-4">
     <div class="flex items-center flex-row mb-2">
-      <h3 class="text-2xl font-semibold text-black/80"> {{ name }}</h3>
+      <h3 class="text-2xl font-semibold text-black/80">{{ name }}</h3>
       <span class="text-sm text-black/40 font-medium mt-1 ml-3">
         {{ gender }}</span
       >
@@ -45,6 +45,7 @@
     </p>
     <button
       class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded font-semibold"
+      (click)="newForm.emit(id)"
     >
       Quero adotar
     </button>

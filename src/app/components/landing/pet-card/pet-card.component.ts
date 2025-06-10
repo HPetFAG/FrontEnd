@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'PetApresentation',
@@ -13,4 +13,6 @@ export class PetCardComponent {
   @Input() age: string = '';
   @Input() size: string = '';
   @Input() description: string = '';
+  @Input() id!: number;
+  @Output() newForm = new EventEmitter<number>();
 }
