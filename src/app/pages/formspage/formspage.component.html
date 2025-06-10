@@ -96,10 +96,7 @@
               <th class="py-3 px-4 text-center font-medium">Ações</th>
             </thead>
             <tbody>
-              <tr
-                *ngFor="let form of forms"
-                class="border-b border-gray-200"
-              >
+              <tr *ngFor="let form of forms" class="border-b border-gray-200">
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"
                 >
@@ -118,12 +115,12 @@
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"
                 >
-                  {{ form.phone }}
+                  {{ form.phone | phone }}
                 </td>
                 <td
                   class="py-3 px-4 font-medium text-base leading-tigh text-center"
                 >
-                  {{ form.createdAt }}
+                  {{ form.createdAt | date : "dd/MM/yyyy" }}
                 </td>
                 <td
                   class="py-3 px-4 font-medium text-base leading-tight text-center"

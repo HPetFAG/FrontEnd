@@ -13,10 +13,11 @@ import { AdoptionCardComponent } from '../../components/adoption-card/adoption-c
 import { Router } from '@angular/router';
 import { FormService } from '../../service/forms/form.service';
 import { Form } from '../../models/forms.model';
+import { PhonePipe } from '../../config/pipe/phone.pipe';
 
 @Component({
   selector: 'app-formspage',
-  imports: [LucideAngularModule, CommonModule],
+  imports: [LucideAngularModule, CommonModule, PhonePipe],
   templateUrl: './formspage.component.html',
 })
 export class FormspageComponent implements OnInit {
