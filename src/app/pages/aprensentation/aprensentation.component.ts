@@ -51,6 +51,6 @@ export class AprensentationComponent {
   }
 
   newform(id: number) {
-    console.log(id)
+    this.router.navigate(['/formulario/', id]);
   }
 }
