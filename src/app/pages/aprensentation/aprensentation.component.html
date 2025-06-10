@@ -203,21 +203,17 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-      <PetApresentation 
-      species="gato"
-      localization="Toledo - PR"
-      age="2 meses"
-      size="Gigante"
-
+      @for (animal of animals; track $index) {
+      <PetApresentation
+        [id]="animal.id"
+        name="{{ animal.name }}"
+        species="{{ animal.species }}"
+        age="{{ animal.age }}"
+        size="{{ animal.size }}"
+        gender="{{ animal.gender }}"
+        description="{{ animal.observation }}"
       ></PetApresentation>
+      }
     </div>
-    <!-- 
-    <div class="text-center">
-      <button
-        class="border border-blue-500 text-blue-500 hover:bg-blue-50 text-lg px-6 py-2 rounded-lg"
-      >
-        Ver Todos os Pets
-      </button>
-    </div> -->
   </div>
 </section>
