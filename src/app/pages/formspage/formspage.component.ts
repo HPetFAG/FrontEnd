@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {
   ChevronLeft,
   ChevronRight,
+  FileEdit,
   LucideAngularModule,
   MoreHorizontal,
   MoreVertical,
@@ -20,6 +21,7 @@ export class FormspageComponent {
   readonly ChevronRigth = ChevronRight;
   readonly ChevronLeft = ChevronLeft;
   readonly more = MoreVertical;
+  readonly Pen = FileEdit
 
   menuOpenId: number | null = null;
 
@@ -61,13 +63,13 @@ export class FormspageComponent {
   getStatusBadgeClass(status: string): string {
     switch (status) {
       case 'Aprovado':
-        return 'text-green-700 bg-green-100 px-2 py-1 rounded-full text-sm font-semibold items-center';
+        return 'text-green-700 bg-green-100 px-2 py-2 rounded-full text-sm font-semibold items-center';
       case 'Pendente':
-        return 'text-yellow-700 bg-yellow-100 px-2 py-1 rounded-full text-sm font-semibold items-center';
+        return 'text-yellow-700 bg-yellow-100 px-2 py-2 rounded-full text-sm font-semibold items-center';
       case 'Recusado':
-        return 'text-red-700 bg-red-100 px-2 py-1 rounded-full text-sm font-semibold items-center';
+        return 'text-red-700 bg-red-100 px-2 py-2 rounded-full text-sm font-semibold items-center';
       default:
-        return 'text-gray-700 bg-gray-100 px-2 py-1 rounded-full text-sm font-semibold items-center';
+        return 'text-gray-700 bg-gray-100 px-2 py-2 rounded-full text-sm font-semibold items-center';
     }
   }
 }
