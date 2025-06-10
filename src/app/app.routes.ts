@@ -8,14 +8,15 @@ import { authGuard } from './service/auth/guards/auth.guards';
 import { AnimalformComponent } from './pages/animalform/animalform.component';
 import { AprensentationComponent } from './pages/aprensentation/aprensentation.component';
 import { AdoptionformComponent } from './pages/adoptionform/adoptionform.component';
+import { FormspageComponent } from './pages/formspage/formspage.component';
 
 export const routes: Routes = [
   // tela de inicio
   { path: '', component: AprensentationComponent },
 
   // tela de login
-   { path: 'login', component: LoginComponent },
-   { path: 'form', component: AdoptionformComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'formulario', component: AdoptionformComponent },
 
   {
     path: 'dashboard',
@@ -28,6 +29,8 @@ export const routes: Routes = [
       { path: 'animal', component: AnimalComponent },
       { path: 'registrar', component: AnimalformComponent },
       { path: 'editar/:id', component: AnimalformComponent },
+      { path: 'formularios', component: FormspageComponent },
+      { path: 'formularios/analisar', component: AdoptionformComponent },
     ],
   },
 ];

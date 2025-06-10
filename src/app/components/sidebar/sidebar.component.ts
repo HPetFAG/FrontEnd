@@ -14,6 +14,7 @@ import {
   AlignJustify,
   X,
   Bone,
+  NotepadText,
 } from 'lucide-angular';
 import { MenuSection } from '../../models/menu-sections/menu.sections';
 import { LogoComponent } from '../logo/logo.component';
@@ -47,6 +48,7 @@ export class SidebarComponent {
   readonly Stethoscope = Stethoscope;
   readonly HandCoins = HandCoins;
   readonly bone = Bone;
+  readonly forms = NotepadText;
 
   constructor(private router: Router, private authService: AuthService) {}
 
@@ -109,6 +111,16 @@ export class SidebarComponent {
           text: 'Cadastro de animais',
           icon: Bone,
           route: 'animal',
+        },
+      ],
+    },
+    {
+      title: 'Adoções',
+      items: [
+        {
+          text: 'Formularios de adocao',
+          icon: NotepadText,
+          route: 'formularios',
         },
       ],
     },
