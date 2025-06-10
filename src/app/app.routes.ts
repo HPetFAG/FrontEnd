@@ -16,7 +16,7 @@ export const routes: Routes = [
 
   // tela de login
   { path: 'login', component: LoginComponent },
-  { path: 'formulario', component: AdoptionformComponent },
+  { path: 'formulario/:id', component: AdoptionformComponent },
 
   {
     path: 'dashboard',

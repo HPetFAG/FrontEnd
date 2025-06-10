@@ -34,15 +34,22 @@
 
             <!-- Dados do animal -->
             <div class="flex-1">
-              <h3 class="text-2xl font-bold mb-2">Toby</h3>
+              <h3 class="text-2xl font-bold mb-2">{{ Animal.name }}</h3>
               <div class="space-y-2">
-                <p><span class="font-semibold">Tipo:</span> Cachorro</p>
-                <p><span class="font-semibold">Raça:</span> Vira-lata</p>
-                <p><span class="font-semibold">Idade:</span> 2 anos</p>
-                <p><span class="font-semibold">Sexo:</span> Macho</p>
+                <p>
+                  <span class="font-semibold">Tipo:</span> {{ Animal.species }}
+                </p>
+                <p>
+                  <span class="font-semibold">Raça:</span> {{ Animal.race }}
+                </p>
+                <p>
+                  <span class="font-semibold">Idade:</span> {{ Animal.age }}
+                </p>
+                <p>
+                  <span class="font-semibold">Sexo:</span> {{ Animal.gender }}
+                </p>
                 <p class="italic">
-                  Muito brincalhão, adora correr no parque e se dá bem com
-                  crianças.
+                  {{ Animal.observation }}
                 </p>
               </div>
             </div>
@@ -167,9 +174,7 @@
       </p>
     </div>
     <div class="flex justify-end mt-6 gap-4">
-      <button
-        class="font-medium bg-gray-400  text-white px-4 py-2 rounded"
-      >
+      <button class="font-medium bg-gray-400 text-white px-4 py-2 rounded">
         Cancelar
       </button>
       <button
