@@ -71,7 +71,7 @@ O Angular CLI permite configurar diferentes frameworks de E2E conforme sua neces
 * [ ] Sistema de upload de fotos (Analise)
 * [ x ] paginações de dados 
 * [ x ] tela na dashboard para todos os formularios
-* [ ] Criar Sistema de reviews apos a adocao ser concluida
+* [ ] Criar Sistema de reviews apos a adocao ser concluida  (analise)
 * [ ] Sistema de doações fakes (Gerando dados aleatorios)
 * [ ] Sistema do back end para alimentar os cards
 * [ ] Notificacao por email do status da adocao (Analise)
