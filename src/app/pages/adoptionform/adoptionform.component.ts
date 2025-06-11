@@ -56,7 +56,7 @@ export class AdoptionformComponent {
     currentlyHasOtherAnimals: false,
     hasExperience: false,
     reasonToAdopt: '',
-    status: '',
+    status: 'recebido',
     createdAt: new Date(),
   };
 
@@ -84,6 +84,8 @@ export class AdoptionformComponent {
     this.animalService.getAnimalByID(id).subscribe({
       next: (animal) => {
         this.Animal = animal;
+        this.Forms.animal = animal; // Atribua o objeto inteiro
+        console.log(this.Forms.animal); // Aqui você pode verificar o ID
       },
       error: (err) => {
         console.error('Erro ao carregar animal', err);
@@ -92,12 +94,19 @@ export class AdoptionformComponent {
   }
 
   CreateNewForm() {
-    this.formsService.createForm(this.Forms).subscribe(
+    const formPayload = {
+      ...this.Forms,
+      id_animal: this.Animal.id, // <-- campo que o back-end espera
+    };
+
+    delete (formPayload as any).animal; // remove o campo 'animal' se necessário
+
+    this.formsService.createForm(formPayload).subscribe(
       () => {
-        console.log(this.Forms);
+        console.log('Formulário enviado:', formPayload);
       },
       (error) => {
-        console.error('Error ao Criar usuario: ', error);
+        console.error('Erro ao criar formulário:', error);
       }
     );
   }
