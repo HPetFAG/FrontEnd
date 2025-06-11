@@ -6,6 +6,9 @@ import { TextareaComponent } from '../../components/forms/textarea/textarea.comp
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalService } from '../../service/animals/animal.service';
 import { Animal } from '../../models/animal.model';
+import { Form } from '../../models/forms.model';
+import { FormService } from '../../service/forms/form.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-adoptionform',
@@ -14,6 +17,7 @@ import { Animal } from '../../models/animal.model';
     InputComponent,
     SelectComponent,
     TextareaComponent,
+    FormsModule,
   ],
   templateUrl: './adoptionform.component.html',
 })
@@ -38,6 +42,24 @@ export class AdoptionformComponent {
     createAt: new Date(),
   };
 
+  Forms: Form = {
+    id: 0,
+    animal: this.Animal,
+    name: '',
+    phone: '',
+    document: '',
+    profession: '',
+    address: '',
+    residenceType: '',
+    hasYard: false,
+    hasOtherAnimals: false,
+    currentlyHasOtherAnimals: false,
+    hasExperience: false,
+    reasonToAdopt: '',
+    status: '',
+    createdAt: new Date(),
+  };
+
   readonly paw = PawPrint;
 
   isEditMode = false;
@@ -45,6 +67,7 @@ export class AdoptionformComponent {
   constructor(
     private router: Router,
     private animalService: AnimalService,
+    private formsService: FormService,
     private route: ActivatedRoute
   ) {}
 
@@ -66,5 +89,16 @@ export class AdoptionformComponent {
         console.error('Erro ao carregar animal', err);
       },
     });
+  }
+
+  CreateNewForm() {
+    this.formsService.createForm(this.Forms).subscribe(
+      () => {
+        console.log(this.Forms);
+      },
+      (error) => {
+        console.error('Error ao Criar usuario: ', error);
+      }
+    );
   }
 }

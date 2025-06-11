@@ -15,19 +15,8 @@ export class FormService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  getUserById(id: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
-  }
-
-  createUser(userData: any): Observable<any> {
+  createForm(userData: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, userData);
   }
 
-  updateUser(id: string, userData: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, userData);
-  }
-
-  deleteUser(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`);
-  }
 }

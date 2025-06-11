@@ -1,187 +1,189 @@
 <section class="flex w-full h-screen flex-col p-5">
-  <!-- card 1 -->
-  <div class="flex-1 w-full h-full flex gap-4">
-    <div class="flex-1">
-      <section
-        class="mb-6 border border-blue-200 bg-blue-50 rounded-xl shadow-sm"
-      >
-        <!-- Header -->
-        <div class="pl-6 pt-6">
-          <h2 class="text-lg font-semibold flex items-center gap-2">
-            <!-- Ícone de patinha -->
-            <lucide-angular
-              [img]="paw"
-              class="text-blue-500"
-              [size]="20"
-            ></lucide-angular>
-            Animal Selecionado
-          </h2>
+  <!-- Card Informativo: Animal Selecionado (fora do <form>) -->
+  <div class="mb-6 border border-blue-200 bg-blue-50 rounded-xl shadow-sm">
+    <div class="pl-6 pt-6">
+      <h2 class="text-lg font-semibold flex items-center gap-2">
+        <lucide-angular
+          [img]="paw"
+          class="text-blue-500"
+          [size]="20"
+        ></lucide-angular>
+        Animal Selecionado
+      </h2>
+    </div>
+    <div class="p-6">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="relative h-48 w-full md:w-1/3 rounded-lg overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Foto de Toby"
+            class="object-cover w-full h-full"
+          />
         </div>
-
-        <!-- Content -->
-        <div class="p-6">
-          <div class="flex flex-col md:flex-row gap-6">
-            <!-- Imagem do animal -->
-            <div
-              class="relative h-48 w-full md:w-1/3 rounded-lg overflow-hidden"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Foto de Toby"
-                class="object-cover w-full h-full"
-              />
-            </div>
-
-            <!-- Dados do animal -->
-            <div class="flex-1">
-              <h3 class="text-2xl font-bold mb-2">{{ Animal.name }}</h3>
-              <div class="space-y-2">
-                <p>
-                  <span class="font-semibold">Tipo:</span> {{ Animal.species }}
-                </p>
-                <p>
-                  <span class="font-semibold">Raça:</span> {{ Animal.race }}
-                </p>
-                <p>
-                  <span class="font-semibold">Idade:</span> {{ Animal.age }}
-                </p>
-                <p>
-                  <span class="font-semibold">Sexo:</span> {{ Animal.gender }}
-                </p>
-                <p class="italic">
-                  {{ Animal.observation }}
-                </p>
-              </div>
-            </div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold mb-2">{{ Animal.name }}</h3>
+          <div class="space-y-2">
+            <p><span class="font-semibold">Tipo:</span> {{ Animal.species }}</p>
+            <p><span class="font-semibold">Raça:</span> {{ Animal.race }}</p>
+            <p><span class="font-semibold">Idade:</span> {{ Animal.age }}</p>
+            <p><span class="font-semibold">Sexo:</span> {{ Animal.gender }}</p>
+            <p class="italic">{{ Animal.observation }}</p>
           </div>
         </div>
-      </section>
-    </div>
-    <div class="flex-1 border border-gray-200 rounded-lg mb-6 p-4">
-      <!-- Campo Nome -->
-      <FieldInput
-        class="flex-1"
-        label="Nome Completo"
-        placeholder="Murillo Weis Kist"
-        fieldName="name"
-        [required]="true"
-      ></FieldInput>
-      <div class="flex flex-row w-full gap-4">
-        <!-- Campo Nome -->
-        <FieldInput
-          class="flex-1"
-          label="Telefone"
-          placeholder="Murillo Weis Kist"
-          fieldName="name"
-          [required]="true"
-        ></FieldInput>
-        <!-- Campo Nome -->
-        <FieldInput
-          class="flex-1"
-          label="CPF"
-          placeholder="Murillo Weis Kist"
-          fieldName="name"
-          [required]="true"
-        ></FieldInput>
-      </div>
-      <div class="flex flex-row w-full gap-4">
-        <!-- Campo Nome -->
-        <FieldInput
-          class="flex-1"
-          label="Profissao"
-          placeholder="Murillo Weis Kist"
-          fieldName="name"
-          [required]="true"
-        ></FieldInput>
-        <!-- Campo Nome -->
-        <FieldInput
-          class="flex-1"
-          label="Endereco"
-          placeholder="Murillo Weis Kist"
-          fieldName="name"
-          [required]="true"
-        ></FieldInput>
       </div>
     </div>
   </div>
-  <!-- card 2 -->
-  <div class="flex-2 flex flex-col border border-gray-200 rounded-lg p-4">
-    <div class="flex flex-row gap-4">
-      <!-- Campo genero -->
-      <FormSelect
-        class="flex-1"
-        label="Mora em:"
-        name="gender"
-        [options]="[
-          { label: 'Casa', value: 'Casa' },
-          { label: 'Apartamento', value: 'Apartamento' }
-        ]"
-        [required]="true"
-      ></FormSelect>
-      <!-- Campo genero -->
-      <FormSelect
-        class="flex-1"
-        label="Possui Quintal/Area:"
-        name="gender"
-        [options]="[
-          { label: 'Sim', value: 'Casa' },
-          { label: 'Nao', value: 'Apartamento' }
-        ]"
-        [required]="true"
-      ></FormSelect>
+
+  <!-- Início do Formulário -->
+  <form
+    (ngSubmit)="CreateNewForm()"
+    #Form="ngForm"
+    class="flex-1 flex flex-col gap-4"
+  >
+    <!-- card 1 -->
+    <div class="flex-1 w-full h-full flex gap-4">
+      <div class="flex-1 border border-gray-200 rounded-lg mb-6 p-4">
+        <FieldInput
+          class="flex-1"
+          label="Nome Completo"
+          placeholder="Murillo Weis Kist"
+          fieldName="name"
+          [required]="true"
+          [(value)]="Forms.name"
+        ></FieldInput>
+        <div class="flex flex-row w-full gap-4">
+          <FieldInput
+            class="flex-1"
+            label="Telefone"
+            placeholder="(44) 98444-4444"
+            fieldName="phone"
+            [required]="true"
+            mask="(00) 00000-0000"
+            [(value)]="Forms.phone"
+          ></FieldInput>
+          <FieldInput
+            class="flex-1"
+            label="CPF"
+            placeholder="123.456.789-85"
+            fieldName="document"
+            [required]="true"
+            mask="000.000.000-00"
+            [(value)]="Forms.document"
+          ></FieldInput>
+        </div>
+        <div class="flex flex-row w-full gap-4">
+          <FieldInput
+            class="flex-1"
+            label="Profissao"
+            placeholder="Pedreiro"
+            fieldName="profession"
+            [required]="true"
+            [(value)]="Forms.profession"
+          ></FieldInput>
+          <FieldInput
+            class="flex-1"
+            label="Endereco"
+            placeholder="Rua das Flores, jardim das orquidias"
+            fieldName="address"
+            [required]="true"
+            [(value)]="Forms.address"
+          ></FieldInput>
+        </div>
+      </div>
     </div>
-    <div class="flex flex-row gap-4">
-      <!-- Campo genero -->
+
+    <!-- card 2 -->
+    <div class="flex-2 flex flex-col border border-gray-200 rounded-lg p-4">
+      <div class="flex flex-row gap-4">
+        <FormSelect
+          class="flex-1"
+          label="Mora em:"
+          name="residenceType"
+          [options]="[
+            { label: 'Casa', value: 'Casa' },
+            { label: 'Apartamento', value: 'Apartamento' }
+          ]"
+          [required]="true"
+          [(value)]="Forms.residenceType"
+        ></FormSelect>
+        <FormSelect
+          class="flex-1"
+          label="Possui Quintal/Area:"
+          name="hasYard"
+          [options]="[
+            { label: 'Sim', value: true },
+            { label: 'Nao', value: false }
+          ]"
+          [required]="true"
+          [(value)]="Forms.hasYard"
+        ></FormSelect>
+      </div>
+
+      <div class="flex flex-row gap-4">
+        <FormSelect
+          class="flex-1"
+          label="Ja teve Outros Animais ?"
+          name="hasOtherAnimals"
+          [options]="[
+            { label: 'Sim', value: true },
+            { label: 'Nao', value: false }
+          ]"
+          [required]="true"
+          [(value)]="Forms.hasOtherAnimals"
+        ></FormSelect>
+        <FormSelect
+          class="flex-1"
+          label="Atualmente possui Outros animais"
+          name="currentlyHasOtherAnimals"
+          [options]="[
+            { label: 'Sim', value: true },
+            { label: 'Nao', value: false }
+          ]"
+          [required]="true"
+          [(value)]="Forms.currentlyHasOtherAnimals"
+        ></FormSelect>
+      </div>
+
       <FormSelect
         class="flex-1"
-        label="Ja teve Outros Animais ?"
-        name="gender"
+        label="Ja Teve Experiencia com Outros animais"
+        name="hasExperience"
         [options]="[
-          { label: 'Sim', value: 'Casa' },
-          { label: 'Nao', value: 'Apartamento' }
+          { label: 'Sim', value: true },
+          { label: 'Nao', value: false }
         ]"
         [required]="true"
+        [(value)]="Forms.hasExperience"
       ></FormSelect>
-      <!-- Campo genero -->
-      <FormSelect
-        class="flex-1"
-        label="Atualmente possui Outros animais"
-        name="gender"
-        [options]="[
-          { label: 'Sim', value: 'Casa' },
-          { label: 'Nao', value: 'Apartamento' }
-        ]"
-        [required]="true"
-      ></FormSelect>
-    </div>
-    <!-- Descricao Fisica -->
-    <FormArea
-      label="Ja teve experiencia com cuidado de outros animais ?"
-      placeholder=""
-      [maxlength]="200"
-    ></FormArea>
-    <!-- Descricao Fisica -->
-    <FormArea
-      label="Por que deseja adotar este animal ?"
-      placeholder="Desejo adotar este animalzinho por ......."
-      [maxlength]="200"
-    ></FormArea>
-    <div>
+
+      <FormArea
+        label="Por que deseja adotar este animal ?"
+        placeholder="Desejo adotar este animalzinho por ......."
+        [maxlength]="200"
+        [(value)]="Forms.reasonToAdopt"
+        name="reasonToAdopt"
+      ></FormArea>
+
       <p class="mt-2 text-base pl-1 text-gray-600">
         Ao enviar este formulário, você concorda que as informações fornecidas
         são verdadeiras e autoriza a verificação dos dados para o processo de
         adoção.
       </p>
+
+      <div class="flex justify-end mt-6 gap-4">
+        <button
+          type="button"
+          class="font-medium bg-gray-400 text-white px-4 py-2 rounded"
+        >
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          class="font-medium bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Enviar
+        </button>
+      </div>
     </div>
-    <div class="flex justify-end mt-6 gap-4">
-      <button class="font-medium bg-gray-400 text-white px-4 py-2 rounded">
-        Cancelar
-      </button>
-      <button
-        class="font-medium bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-      >
-        Enviar
-      </button>
-    </div>
-  </div>
+  </form>
 </section>
