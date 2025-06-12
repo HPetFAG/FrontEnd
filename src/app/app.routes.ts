@@ -9,6 +9,7 @@ import { AnimalformComponent } from './pages/animalform/animalform.component';
 import { AprensentationComponent } from './pages/aprensentation/aprensentation.component';
 import { AdoptionformComponent } from './pages/adoptionform/adoptionform.component';
 import { FormspageComponent } from './pages/formspage/formspage.component';
+import { FormsanalysisComponent } from './pages/formsanalysis/formsanalysis.component';
 
 export const routes: Routes = [
   // tela de inicio
@@ -30,7 +31,7 @@ export const routes: Routes = [
       { path: 'registrar', component: AnimalformComponent },
       { path: 'editar/:id', component: AnimalformComponent },
       { path: 'formularios', component: FormspageComponent },
-      { path: 'formularios/analisar', component: AdoptionformComponent },
+      { path: 'formularios/analisar/:id', component: FormsanalysisComponent },
     ],
   },
 ];

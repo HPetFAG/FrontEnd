@@ -1,0 +1,46 @@
+<main class="p-8 w-full h-screen flex flex-col">
+  <div class="flex-1">
+    <!-- Card Informativo: Animal Selecionado (fora do <form>) -->
+    <div class="border border-blue-200 bg-blue-50 rounded-xl shadow-sm">
+      <div class="pl-6 pt-6">
+        <h2 class="text-lg font-semibold flex items-center gap-2">
+          <lucide-angular
+            [img]="paw"
+            class="text-blue-500"
+            [size]="20"
+          ></lucide-angular>
+          Animal Selecionado
+        </h2>
+      </div>
+      <div class="p-5">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="relative h-48 w-full md:w-1/3 rounded-lg overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Foto de Toby"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold mb-2">Teste</h3>
+            <div class="space-y-2">
+              <p>
+                <span class="font-semibold">Tipo:</span> Teste
+              </p>
+              <p><span class="font-semibold">Raça:</span> Teste</p>
+              <p><span class="font-semibold">Idade:</span> Teste</p>
+              <p>
+                <span class="font-semibold">Sexo:</span> teste
+              </p>
+              <p class="italic">Teste</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-2 flex bg-fuchsia-50 p-4">
+      <div class="flex-1 bg-amber-300"></div>
+      <div class="flex-1 bg-fuchsia-200"></div>
+</div>
+</main>

@@ -30,7 +30,7 @@ export class FormspageComponent implements OnInit {
   menuOpenId: number | null = null;
   forms: Form[] = [];
 
-  constructor(private route: Router, private formService: FormService) {}
+  constructor(private router: Router, private formService: FormService) {}
 
   ngOnInit(): void {
     this.LoadAllForms();
@@ -73,6 +73,8 @@ export class FormspageComponent implements OnInit {
   }
 
   viewForm(id: number): void {
+    //  this.router.navigate(['dashboard/formularios/analisar/', id]);
     console.log(id)
+    console.log()
   }
 }

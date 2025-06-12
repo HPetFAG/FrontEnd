@@ -19,4 +19,7 @@ export class FormService {
     return this.http.post<any>(this.apiUrl, userData);
   }
 
+  getFormById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }
