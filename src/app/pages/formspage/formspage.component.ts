@@ -14,10 +14,14 @@ import { Router } from '@angular/router';
 import { FormService } from '../../service/forms/form.service';
 import { Form } from '../../models/forms.model';
 import { PhonePipe } from '../../config/pipe/phone.pipe';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {InputComponent} from '../../components/forms/input/input.component';
+import {SelectComponent} from '../../components/forms/select/select.component';
+import {TextareaComponent} from '../../components/forms/textarea/textarea.component';
 
 @Component({
   selector: 'app-formspage',
-  imports: [LucideAngularModule, CommonModule, PhonePipe],
+  imports: [LucideAngularModule, CommonModule, FormsModule, ReactiveFormsModule, PhonePipe],
   templateUrl: './formspage.component.html',
 })
 export class FormspageComponent implements OnInit {
@@ -73,8 +77,6 @@ export class FormspageComponent implements OnInit {
   }
 
   viewForm(id: number): void {
-    //  this.router.navigate(['dashboard/formularios/analisar/', id]);
-    console.log(id)
-    console.log()
+      this.router.navigate(['dashboard/formularios/analisar/', id]);
   }
 }
