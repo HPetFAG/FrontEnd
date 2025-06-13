@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
     InputComponent,
     SelectComponent,
     TextareaComponent,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './formsanalysis.component.html',
 })
@@ -38,6 +38,8 @@ export class FormsanalysisComponent implements OnInit {
       const id = Number(idParam);
       this.loadAnimal(id);
     }
+
+    console.log('Nome do animal ', this.Forms.animal.name);
   }
 
   Animal: Animal = {
@@ -88,7 +90,19 @@ export class FormsanalysisComponent implements OnInit {
           return;
         }
         this.Forms = animal[0];
-        console.log(animal[0]);
+
+        this.animalService.getAnimalByID(this.Forms.animal.id).subscribe({
+          next: (animalData) => {
+            if (!animalData) {
+              console.error('Animal não encontrado!');
+              return;
+            }
+            this.Animal = animalData;
+          },
+          error: (err) => {
+            console.error('Erro ao carregar animal', err);
+          },
+        });
       },
       error: (err) => {
         console.error('Erro ao carregar animal', err);
