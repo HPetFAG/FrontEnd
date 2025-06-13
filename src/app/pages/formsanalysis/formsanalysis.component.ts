@@ -109,4 +109,18 @@ export class FormsanalysisComponent implements OnInit {
       },
     });
   }
+
+  goBack(): void {
+    console.log('Voltar para a lista de formulários');
+  }
+
+  rejectForm(): void {
+    // Lógica para rejeitar o formulário
+    console.log('Formulário rejeitado');
+  }
+
+  approveForm(form: Form): void {
+    // Lógica para aprovar o formulário
+    console.log('Formulário aprovado', form);
+  }
 }

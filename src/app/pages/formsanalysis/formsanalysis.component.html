@@ -154,6 +154,7 @@
             [(value)]="Forms.reasonToAdopt"
             name="reasonToAdopt"
           ></FormArea>
+          
 
           <p class="text-base pl-1 text-red-500/70 font-semibold">
             Ao analisar este formulário não leve em consideração familiares,
@@ -165,18 +166,21 @@
             <button
               type="button"
               class="font-medium bg-red-500 text-white px-4 py-2 rounded"
+              (click)="rejectForm()"
             >
               Recusar
             </button>
             <button
-              type="submit"
+              type="button"
               class="font-medium bg-gray-500 text-white px-4 py-2 rounded"
+              (click)="goBack()"
             >
               Voltar
             </button>
             <button
-              type="submit"
+              type="button"
               class="font-medium bg-green-500 text-white px-4 py-2 rounded"
+              (click)="approveForm(Forms)"
             >
               Aprovar
             </button>
