@@ -11,6 +11,6 @@ export class TextareaComponent {
   @Input() label: string = '';
   @Input() placeholder: string = '';
   @Input() maxlength: number = 200;
-  @Input() value: string = '';
+  @Input() value?: string = '';
   @Output() valueChange = new EventEmitter<string>();
 }
