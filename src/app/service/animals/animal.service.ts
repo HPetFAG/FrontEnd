@@ -40,7 +40,11 @@ export class AnimalService {
     return this.http.get<PaginatedResponse<Animal>>(`${this.apiUrl}/search?name=${term}&page=${page}`);
   }
 
-  getTotalCadastrados(): Observable<number> {
-    return this.http.get<number>(`${this.apiUrl}/total-cadastrados`);
+  getTotalRegistered(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-registered`);
+  }
+
+  getTotalAvailables(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-availables`);
   }
 }
