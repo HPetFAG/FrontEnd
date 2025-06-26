@@ -45,6 +45,10 @@ export class AnimalService {
   }
 
   getTotalAvailables(): Observable<number> {
-    return this.http.get<number>(`${this.apiUrl}/total-availables`);
+    return this.http.get<number>(`${this.apiUrl}/total-available`);
+  }
+
+  getTotalAdopted(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-adopted`);
   }
 }

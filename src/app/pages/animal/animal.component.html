@@ -25,7 +25,7 @@
       [icon]="mappin"
       iconColor="text-red-500"
       [status]="'positive'"
-      [value]="127"
+      [value]="totalAdopted"
       [percent]="12"
     ></BasicCard>
     <BasicCard
@@ -106,7 +106,7 @@
       <div class="flex-1 mt-2 flex justify-end">
         <!-- filtros -->
         <!-- Botoes de navegacao -->
-        <div class="flex  gap-4">
+        <div class="flex gap-4">
           <Button
             class="flex items-center border border-gray-200 rounded-lg p-1"
             (click)="PreviousPage()"

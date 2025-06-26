@@ -47,10 +47,13 @@ export class AnimalComponent {
   isSearching = false;
   totalRegistered: number = 0;
   totalAvailables: number = 0;
+  totalAdopted: number = 0;
 
   ngOnInit(): void {
     this.LoadAllAnimals(this.page);
     this.getTotalRegistered();
+    this.getTotalAvailables();
+    this.getTotalAdopted();
   }
 
   constructor(private router: Router, private animalService: AnimalService) {
@@ -154,6 +157,12 @@ export class AnimalComponent {
   getTotalAvailables(): void {
     this.animalService.getTotalAvailables().subscribe((res) => {
       this.totalAvailables = res;
+    });
+  }
+
+  getTotalAdopted(): void {
+    this.animalService.getTotalAdopted().subscribe((res) => {
+      this.totalAdopted = res;
     });
   }
 }
