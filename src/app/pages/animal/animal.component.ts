@@ -45,9 +45,11 @@ export class AnimalComponent {
   searchSubject = new Subject<string>();
   page = 1;
   isSearching = false;
+  totalCadastrados: number = 0;
 
   ngOnInit(): void {
     this.LoadAllAnimals(this.page);
+    this.getTotalCadastrados();
   }
 
   constructor(private router: Router, private animalService: AnimalService) {
@@ -140,5 +142,11 @@ export class AnimalComponent {
         this.LoadAllAnimals(this.page);
       }
     }
+  }
+
+  getTotalCadastrados(): void {
+    this.animalService.getTotalCadastrados().subscribe((res) => {
+      this.totalCadastrados = res;
+    });
   }
 }
