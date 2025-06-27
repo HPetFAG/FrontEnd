@@ -15,7 +15,7 @@
   </div>
 
   <!-- grafico negativo -->
-  @switch (status) { 
+  @switch (status) {
   @case ('positive') {
   <!-- grafico Positivo -->
   <div class="flex items-center gap-1 mt-2">
@@ -25,7 +25,7 @@
       [size]="26"
     ></lucide-angular>
     <span class="text-sm text-green-600 font-medium"
-      >+{{ percent }}% este mês</span
+      >{{ percent }}% este mês</span
     >
   </div>
   } @case ('negative') {
@@ -36,7 +36,7 @@
       [size]="26"
     ></lucide-angular>
     <span class="text-sm text-red-600 font-medium"
-      >-{{ percent }}% este mês</span
+      >{{ percent }}% este mês</span
     >
   </div>
   } }

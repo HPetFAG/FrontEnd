@@ -6,36 +6,36 @@
       title="Total Cadastrado"
       [icon]="bone"
       iconColor="text-blue-500"
-      [status]="'negative'"
-      [value]="127"
-      [percent]="12"
+      [status]="negativeOrPositive(progressRegistered)"
+      [value]="totalRegistered"
+      [percent]="progressRegistered"
     ></BasicCard>
     <BasicCard
       class="w-full"
       title="Disponiveis"
       [icon]="dog"
       iconColor="text-green-500"
-      [status]="'positive'"
-      [value]="127"
-      [percent]="12"
+      [status]="negativeOrPositive(progressAavailables)"
+      [value]="totalAvailables"
+      [percent]="progressAavailables"
     ></BasicCard>
     <BasicCard
       class="w-full"
       title="Adotados"
       [icon]="mappin"
       iconColor="text-red-500"
-      [status]="'positive'"
-      [value]="127"
-      [percent]="12"
+      [status]="negativeOrPositive(progressAdopted)"
+      [value]="totalAdopted"
+      [percent]="progressAdopted"
     ></BasicCard>
     <BasicCard
       class="w-full"
       title="Em Processo"
       [icon]="loanding"
       iconColor="text-yellow-500"
-      [status]="'positive'"
-      [value]="127"
-      [percent]="12"
+      [status]="negativeOrPositive(progressInProgress)"
+      [value]="totalInProgress"
+      [percent]="progressInProgress"
     ></BasicCard>
   </div>
   <!-- container de filtros -->
@@ -106,7 +106,7 @@
       <div class="flex-1 mt-2 flex justify-end">
         <!-- filtros -->
         <!-- Botoes de navegacao -->
-        <div class="flex  gap-4">
+        <div class="flex gap-4">
           <Button
             class="flex items-center border border-gray-200 rounded-lg p-1"
             (click)="PreviousPage()"

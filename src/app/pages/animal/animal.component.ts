@@ -45,9 +45,25 @@ export class AnimalComponent {
   searchSubject = new Subject<string>();
   page = 1;
   isSearching = false;
+  totalRegistered: number = 0;
+  totalAvailables: number = 0;
+  totalAdopted: number = 0;
+  totalInProgress: number = 0;
+  progressAavailables: number = 0;
+  progressAdopted: number = 0;
+  progressInProgress: number = 0;
+  progressRegistered: number = 0;
 
   ngOnInit(): void {
     this.LoadAllAnimals(this.page);
+    this.getTotalRegistered();
+    this.getTotalAvailables();
+    this.getTotalAdopted();
+    this.getTotalInProgress();
+    this.getProgressAvailables();
+    this.getProgressAdopted();
+    this.getProgressInProgress();
+    this.getProgressRegistered();
   }
 
   constructor(private router: Router, private animalService: AnimalService) {
@@ -140,5 +156,57 @@ export class AnimalComponent {
         this.LoadAllAnimals(this.page);
       }
     }
+  }
+
+  getTotalRegistered(): void {
+    this.animalService.getTotalRegistered().subscribe((res) => {
+      this.totalRegistered = res;
+    });
+  }
+
+  getTotalAvailables(): void {
+    this.animalService.getTotalAvailables().subscribe((res) => {
+      this.totalAvailables = res;
+    });
+  }
+
+  getTotalAdopted(): void {
+    this.animalService.getTotalAdopted().subscribe((res) => {
+      this.totalAdopted = res;
+    });
+  }
+
+  getTotalInProgress(): void {
+    this.animalService.getTotalInProgress().subscribe((res) => {
+      this.totalInProgress = res;
+    });
+  }
+
+  getProgressAvailables(): void {
+    this.animalService.getProgressAvailables().subscribe((res) => {
+      this.progressAavailables = res;
+    });
+  }
+
+  getProgressAdopted(): void {
+    this.animalService.getProgressAdopted().subscribe((res) => {
+      this.progressAdopted = res;
+    });
+  }
+
+  getProgressInProgress(): void {
+    this.animalService.getProgressInProgress().subscribe((res) => {
+      this.progressInProgress = res;
+    });
+  }
+
+  getProgressRegistered(): void {
+    this.animalService.getProgressRegistered().subscribe((res) => {
+      this.progressRegistered = res;
+    });
+  }
+
+  negativeOrPositive(progress: number): 'positive' | 'negative' {
+    return progress >= 0 ? 'positive' : 'negative';
   }
 }

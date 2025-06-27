@@ -38,6 +38,45 @@ export class AnimalService {
 
   searchByName(term: string, page: number = 1): Observable<PaginatedResponse<Animal>>  {
     return this.http.get<PaginatedResponse<Animal>>(`${this.apiUrl}/search?name=${term}&page=${page}`);
+  }
 
+  getTotalRegistered(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-registered`);
+  }
+
+  getTotalAvailables(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-available`);
+  }
+
+  getTotalAdopted(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-adopted`);
+  }
+
+  getTotalInProgress(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-in-progress`);
+  }
+
+  getProgressAvailables(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/progress-available`);
+  }
+
+  getProgressAdopted(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/progress-adopted`);
+  }
+
+  getProgressInProgress(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/progress-in-progress`);
+  }
+
+  getProgressRegistered(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/progress-registered`);
+  }
+
+  getMetaAdoption(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/progress-adoption-rate`);
+  }
+
+  returnMetaAdoption(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/meta`);
   }
 }
