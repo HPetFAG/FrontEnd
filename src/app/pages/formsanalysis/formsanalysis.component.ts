@@ -30,16 +30,16 @@ export class FormsanalysisComponent implements OnInit {
   ) {}
 
   isEditMode = false;
+  formId!: number; // propriedade pra guardar o ID
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
     if (idParam) {
       this.isEditMode = true;
       const id = Number(idParam);
+      this.formId = Number(idParam);
       this.loadAnimal(id);
     }
-
-    console.log('Nome do animal ', this.Forms.animal.name);
   }
 
   Animal: Animal = {
@@ -112,15 +112,26 @@ export class FormsanalysisComponent implements OnInit {
 
   goBack(): void {
     console.log('Voltar para a lista de formulários');
+    this.router.navigate(['dashboard/formularios']);
   }
 
   rejectForm(): void {
-    // Lógica para rejeitar o formulário
-    console.log('Formulário rejeitado');
+    this.formsService.updateStatus(this.formId, 'Recusado').subscribe({
+      next: (updatedForm) => {
+        console.log('Formulário rejeitado:', updatedForm);
+        this.router.navigate(['dashboard/formularios']);
+      },
+      error: (err) => console.error('Erro ao rejeitar:', err),
+    });
   }
 
-  approveForm(form: Form): void {
-    // Lógica para aprovar o formulário
-    console.log('Formulário aprovado', form);
+  approveForm(): void {
+    this.formsService.updateStatus(this.formId, 'Aprovado').subscribe({
+      next: (updatedForm) => {
+        console.log('Formulário aprovado:', updatedForm);
+        this.router.navigate(['dashboard/formularios']);
+      },
+      error: (err) => console.error('Erro ao aprovar:', err),
+    });
   }
 }

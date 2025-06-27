@@ -22,4 +22,9 @@ export class FormService {
   getFormById(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
+
+  updateStatus(id: number, status: string): Observable<any> {
+    // PATCH para atualizar parcialmente o recurso
+    return this.http.patch(`${this.apiUrl}/${id}/status`, { status });
+  }
 }
