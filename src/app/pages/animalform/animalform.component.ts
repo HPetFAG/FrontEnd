@@ -75,6 +75,9 @@ export class AnimalformComponent implements OnInit {
   }
 
   CreateAnimal(): void {
+    this.Animal.weight = Number(this.Animal.weight);
+    this.Animal.height = Number(this.Animal.height);
+
     if (this.Animal.vaccinated === true) {
       this.Animal.vaccinated = true;
     } else if (this.Animal.vaccinated === false) {
