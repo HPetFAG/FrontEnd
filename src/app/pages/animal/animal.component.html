@@ -15,9 +15,9 @@
       title="Disponiveis"
       [icon]="dog"
       iconColor="text-green-500"
-      [status]="'positive'"
+      [status]="negativeOrPositive(progressAavailables)"
       [value]="totalAvailables"
-      [percent]="12"
+      [percent]="progressAavailables"
     ></BasicCard>
     <BasicCard
       class="w-full"
@@ -34,7 +34,7 @@
       [icon]="loanding"
       iconColor="text-yellow-500"
       [status]="'positive'"
-      [value]="127"
+      [value]="totalInProgress"
       [percent]="12"
     ></BasicCard>
   </div>

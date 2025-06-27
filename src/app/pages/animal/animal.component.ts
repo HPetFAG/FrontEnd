@@ -48,12 +48,16 @@ export class AnimalComponent {
   totalRegistered: number = 0;
   totalAvailables: number = 0;
   totalAdopted: number = 0;
+  totalInProgress: number = 0;
+  progressAavailables: number = 0;
 
   ngOnInit(): void {
     this.LoadAllAnimals(this.page);
     this.getTotalRegistered();
     this.getTotalAvailables();
     this.getTotalAdopted();
+    this.getTotalInProgress();
+    this.getProgressAvailables();
   }
 
   constructor(private router: Router, private animalService: AnimalService) {
@@ -164,5 +168,21 @@ export class AnimalComponent {
     this.animalService.getTotalAdopted().subscribe((res) => {
       this.totalAdopted = res;
     });
+  }
+
+  getTotalInProgress(): void {
+    this.animalService.getTotalInProgress().subscribe((res) => {
+      this.totalInProgress = res;
+    });
+  }
+
+  getProgressAvailables(): void {
+    this.animalService.getProgressAvailables().subscribe((res) => {
+      this.progressAavailables = res;
+    });
+  }
+
+  negativeOrPositive(progressAavailables: number): 'positive' | 'negative' {
+    return progressAavailables >= 0 ? 'positive' : 'negative';
   }
 }

@@ -16,6 +16,7 @@ import {
 } from 'lucide-angular';
 import { BasicCardComponent } from '../../components/basic-card/basic-card.component';
 import { AdoptionCardComponent } from "../../components/adoption-card/adoption-card.component";
+import { AnimalService } from '../../service/animals/animal.service';
 
 @Component({
   selector: 'app-homepage',
@@ -29,4 +30,20 @@ export class HomepageComponent {
   readonly heart = Heart;
   readonly Chevronleft = ChevronLeft;
   readonly Chevronright = ChevronRight;
+
+  totalAvailables: number = 0;
+
+  constructor(private animalService: AnimalService) {}
+
+  ngOnInit(): void {
+    this.getTotalAvailables();
+  }
+
+  getTotalAvailables(): void {
+    this.animalService.getTotalAvailables().subscribe((res) => {
+      this.totalAvailables = res;
+    });
+  }
 }
+
+
