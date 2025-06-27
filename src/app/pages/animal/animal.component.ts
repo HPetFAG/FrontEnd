@@ -51,6 +51,7 @@ export class AnimalComponent {
   totalInProgress: number = 0;
   progressAavailables: number = 0;
   progressAdopted: number = 0;
+  progressInProgress: number = 0;
 
   ngOnInit(): void {
     this.LoadAllAnimals(this.page);
@@ -60,6 +61,7 @@ export class AnimalComponent {
     this.getTotalInProgress();
     this.getProgressAvailables();
     this.getProgressAdopted();
+    this.getProgressInProgress();
   }
 
   constructor(private router: Router, private animalService: AnimalService) {
@@ -187,6 +189,12 @@ export class AnimalComponent {
   getProgressAdopted(): void {
     this.animalService.getProgressAdopted().subscribe((res) => {
       this.progressAdopted = res;
+    });
+  }
+
+  getProgressInProgress(): void {
+    this.animalService.getProgressInProgress().subscribe((res) => {
+      this.progressInProgress = res;
     });
   }
 
