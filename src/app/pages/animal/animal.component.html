@@ -6,9 +6,9 @@
       title="Total Cadastrado"
       [icon]="bone"
       iconColor="text-blue-500"
-      [status]="'negative'"
+      [status]="negativeOrPositive(progressRegistered)"
       [value]="totalRegistered"
-      [percent]="12"
+      [percent]="progressRegistered"
     ></BasicCard>
     <BasicCard
       class="w-full"

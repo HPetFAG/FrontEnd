@@ -32,17 +32,29 @@ export class HomepageComponent {
   readonly Chevronright = ChevronRight;
 
   totalAvailables: number = 0;
+  progressAavailables: number = 0;
 
   constructor(private animalService: AnimalService) {}
 
   ngOnInit(): void {
     this.getTotalAvailables();
+    this.getProgressAvailables();
   }
 
   getTotalAvailables(): void {
     this.animalService.getTotalAvailables().subscribe((res) => {
       this.totalAvailables = res;
     });
+  }
+
+  getProgressAvailables(): void {
+    this.animalService.getProgressAvailables().subscribe((res) => {
+      this.progressAavailables = res;
+    });
+  }
+
+  negativeOrPositive(progress: number): 'positive' | 'negative' {
+    return progress >= 0 ? 'positive' : 'negative';
   }
 }
 

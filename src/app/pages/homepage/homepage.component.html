@@ -7,9 +7,9 @@
         title="Animais disponiveis"
         [icon]="paw"
         iconColor="text-yellow-500"
-        [status]="'positive'"
+        [status]="negativeOrPositive(progressAavailables)"
         [value]="totalAvailables"
-        [percent]="12"
+        [percent]="progressAavailables"
       ></BasicCard>
       <!-- Card 2 -->
       <BasicCard
