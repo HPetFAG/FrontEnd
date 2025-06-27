@@ -37,7 +37,6 @@ export class HomepageComponent {
   progressAdopted: number = 0;
   metaAdoptions: number = 0;
   meta: number = 0;
-  total: number = 0;
 
   constructor(private animalService: AnimalService) {}
 
@@ -91,8 +90,7 @@ export class HomepageComponent {
   }
 
   missingMeta(): number {
-    this.total = this.meta - this.metaAdoptions;
-    return this.total;
+    return this.meta - this.totalAdopted;
   }
 
 }
