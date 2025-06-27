@@ -17,9 +17,9 @@
         title="Total de adoções"
         [icon]="heart"
         iconColor="text-red-500"
-        [status]="'negative'"
-        [value]="23"
-        [percent]="20"
+        [status]="negativeOrPositive(progressAdopted)"
+        [value]="totalAdopted"
+        [percent]="progressAdopted"
       ></BasicCard>
       <!-- Card 3 -->
       <div
@@ -40,14 +40,14 @@
         <div class="w-full h-2 rounded-full bg-neutral-100 mt-2">
           <div
             class="h-full bg-black rounded-full transition-all duration-500"
-            style="width: 50%"
+            [style.width]="metaAdoptions + '%'"
           ></div>
         </div>
 
         <!-- Mensagem -->
         <span class="text-sm text-black/50 mt-2 block">
           Faltam apenas
-          <span class="font-semibold text-black/80">7 adoções</span>
+          <span class="font-semibold text-black/80">{{ missingMeta() }} adoções</span>
           para bater a meta!
         </span>
       </div>

@@ -33,12 +33,21 @@ export class HomepageComponent {
 
   totalAvailables: number = 0;
   progressAavailables: number = 0;
+  totalAdopted: number = 0;
+  progressAdopted: number = 0;
+  metaAdoptions: number = 0;
+  meta: number = 0;
+  total: number = 0;
 
   constructor(private animalService: AnimalService) {}
 
   ngOnInit(): void {
     this.getTotalAvailables();
     this.getProgressAvailables();
+    this.getTotalAdopted();
+    this.getProgressAdopted();
+    this.getMetaAdoption();
+    this.returnMetaAdoption();
   }
 
   getTotalAvailables(): void {
@@ -53,9 +62,39 @@ export class HomepageComponent {
     });
   }
 
+  getTotalAdopted(): void {
+    this.animalService.getTotalAdopted().subscribe((res) => {
+      this.totalAdopted = res;
+    });
+  }
+
+  getProgressAdopted(): void {
+    this.animalService.getProgressAdopted().subscribe((res) => {
+      this.progressAdopted = res;
+    });
+  }
+
   negativeOrPositive(progress: number): 'positive' | 'negative' {
     return progress >= 0 ? 'positive' : 'negative';
   }
+
+  getMetaAdoption(): void {
+    this.animalService.getMetaAdoption().subscribe((res) => {
+      this.metaAdoptions = res;
+    });
+  }
+
+  returnMetaAdoption(): void {
+    this.animalService.returnMetaAdoption().subscribe((res) => {
+      this.meta = res;
+    });
+  }
+
+  missingMeta(): number {
+    this.total = this.meta - this.totalAdopted;
+    return this.total;
+  }
+
 }
 
 
