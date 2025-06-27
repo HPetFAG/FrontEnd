@@ -91,7 +91,7 @@ export class HomepageComponent {
   }
 
   missingMeta(): number {
-    this.total = this.meta - this.totalAdopted;
+    this.total = this.meta - this.metaAdoptions;
     return this.total;
   }
 
