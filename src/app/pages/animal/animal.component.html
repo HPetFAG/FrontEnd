@@ -24,9 +24,9 @@
       title="Adotados"
       [icon]="mappin"
       iconColor="text-red-500"
-      [status]="'positive'"
+      [status]="negativeOrPositive(progressAdopted)"
       [value]="totalAdopted"
-      [percent]="12"
+      [percent]="progressAdopted"
     ></BasicCard>
     <BasicCard
       class="w-full"

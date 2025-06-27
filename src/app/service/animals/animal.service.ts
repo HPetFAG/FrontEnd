@@ -59,4 +59,8 @@ export class AnimalService {
   getProgressAvailables(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/progress-available`);
   }
+
+  getProgressAdopted(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/progress-adopted`);
+  }
 }
